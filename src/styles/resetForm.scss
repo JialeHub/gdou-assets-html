@@ -1,0 +1,46 @@
+// 表单重置样式
+#login{
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset !important;
+  }
+  input:-webkit-autofill:focus {
+    box-shadow: 0 0 0 1000px white inset !important;
+  }
+  input,textarea{
+    border: none!important;
+    width: calc(100% - 10px); padding-left: 10px;
+  }
+  input,textarea,select,button{
+    appearance: none!important;
+    -moz-appearance: none!important;
+    -webkit-appearance: none!important;
+    -o-appearance: none!important;
+    outline:none!important;
+  }
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+  select::-ms-expand { display: none !important; }
+  input::-ms-expand { display: none !important; }
+  .not-arrow::-ms-expand { display: none !important; }
+  .not-arrow{
+    -webkit-appearance:none !important;
+    -moz-appearance:none !important;
+    appearance:none !important; /*去掉下拉箭头*/
+    /*在选择框的最右侧中间显示小箭头图片*/
+  }
+  /*Chrome 下去除type ==  "number"  时 的右侧图标*/
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0!important;
+  }
+  /*火狐 下去除type ==  "number"  时 的右侧图标*/
+  input[type="number"]{-moz-appearance:textfield!important;}
+  /*IE下去除 右边的×*/
+  input::-ms-clear{display:none!important;}
+  /*IE下去除 小眼睛*/
+  input::-ms-reveal{display:none!important;}
+
+}
