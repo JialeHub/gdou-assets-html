@@ -237,8 +237,8 @@
     mounted() {
       if (this.$route.hash) {
         let str = this.$route.hash.replace("#", "");
-        str = str.replace("v-pills-",'');
-        str = str.replace("-tab",'');
+        str = str.replace("v-pills-", '');
+        str = str.replace("-tab", '');
         $('#profile #v-pills-' + str + '-tab').tab('show')
       }
     },
