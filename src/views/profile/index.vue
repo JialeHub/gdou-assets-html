@@ -236,7 +236,10 @@
     },
     mounted() {
       if (this.$route.hash) {
-        $('#profile #v-pills-' + this.$route.hash.replace("#", "") + '-tab').tab('show')
+        let str = this.$route.hash.replace("#", "");
+        str = str.replace("v-pills-",'');
+        str = str.replace("-tab",'');
+        $('#profile #v-pills-' + str + '-tab').tab('show')
       }
     },
     methods: {},
