@@ -28,100 +28,122 @@
       <div class="row navOut sticky-top">
         <div class="container-xl p-0">
           <nav class="nav nav-pills nav-fill">
-            <a :class="'nav-item nav-link'+($route.meta.activeTag==='home'?' active':'')"
-               @click.stop="$router.push({path:'/'})"><span>公司首页</span></a>
-            <a :class="'nav-item nav-link'+($route.meta.activeTag==='profile'?' active':'')" @mouseenter="nav2_1=true"
+            <a href="/" :class="'nav-item nav-link'+($route.meta.activeTag==='home'?' active':'')"
+               @click.prevent="$router.push({path:'/'})"><span>公司首页</span></a>
+            <a href="/profile" :class="'nav-item nav-link'+($route.meta.activeTag==='profile'?' active':'')"
+               @mouseenter="nav2_1=true"
                @mouseleave="nav2_1=false"
-               @click.stop="$router.push({path:'/profile'})">
+               @click.prevent="$router.push({path:'/profile'})">
               <span>公司概况</span>
               <div class="nav2" v-show="nav2_1">
                 <nav class="nav nav-pills">
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='profile'&&$route.hash==='#intro'?' active':'')"
-                     @click.stop="$router.push({path:'/profile#intro'})"><span>公司简介</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='profile'&&$route.hash==='#team'?' active':'')"
-                     @click.stop="$router.push({path:'/profile#team'})"><span>公司团队</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='profile'&&$route.hash==='#framework'?' active':'')"
-                     @click.stop="$router.push({path:'/profile#framework'})"><span>组织架构</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='profile'&&$route.hash==='#contact'?' active':'')"
-                     @click.stop="$router.push({path:'/profile#contact'})"><span>联系我们</span></a>
+                  <a href="/profile#intro"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='profile'&&$route.hash==='#intro'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/profile#intro'})"><span>公司简介</span></a>
+                  <a href="/profile#team"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='profile'&&$route.hash==='#team'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/profile#team'})"><span>公司团队</span></a>
+                  <a href="/profile#framework"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='profile'&&$route.hash==='#framework'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/profile#framework'})"><span>组织架构</span></a>
+                  <a href="/profile#contact"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='profile'&&$route.hash==='#contact'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/profile#contact'})"><span>联系我们</span></a>
                 </nav>
               </div>
             </a>
-            <a :class="'nav-item nav-link'+($route.meta.activeTag==='dynamic'?' active':'')" @mouseenter="nav2_2=true"
+            <a href="/dynamic" :class="'nav-item nav-link'+($route.meta.activeTag==='dynamic'?' active':'')"
+               @mouseenter="nav2_2=true"
                @mouseleave="nav2_2=false"
-               @click.stop="$router.push({path:'/dynamic'})">
+               @click.prevent="$router.push({path:'/dynamic'})">
               <span>公司动态</span>
               <div class="nav2" v-show="nav2_2">
                 <nav class="nav nav-pills">
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='dynamic'&&$route.params.content==='news'?' active':'')"
-                     @click.stop="$router.push({path:'/dynamic/news'})"><span>新闻快讯</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='dynamic'&&$route.params.content==='notice'?' active':'')"
-                     @click.stop="$router.push({path:'/dynamic/notice'})"><span>通知公告</span></a>
+                  <a href="/dynamic/news"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='dynamic'&&$route.params.content==='news'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/dynamic/news'})"><span>新闻快讯</span></a>
+                  <a href="/dynamic/notice"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='dynamic'&&$route.params.content==='notice'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/dynamic/notice'})"><span>通知公告</span></a>
                 </nav>
               </div>
             </a>
-            <a :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'?' active':'')"
+            <a href="/subordinate" :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'?' active':'')"
                @mouseenter="nav2_3=true" @mouseleave="nav2_3=false"
-               @click.stop="$router.push({path:'/subordinate'})">
+               @click.prevent="$router.push({path:'/subordinate'})">
               <span>下属企业</span>
               <div class="nav2" v-show="nav2_3">
                 <nav class="nav nav-pills">
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='1'?' active':'')"
-                     @click.stop="$router.push({path:'/subordinate/1'})"><span>船舶公司</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='2'?' active':'')"
-                     @click.stop="$router.push({path:'/subordinate/2'})"><span>网厂</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='3'?' active':'')"
-                     @click.stop="$router.push({path:'/subordinate/3'})"><span>珍珠公司</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='4'?' active':'')"
-                     @click.stop="$router.push({path:'/subordinate/4'})"><span>经济开发总公司</span></a>
+                  <a href="/subordinate/1"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='1'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/subordinate/1'})"><span>船舶公司</span></a>
+                  <a href="/subordinate/2"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='2'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/subordinate/2'})"><span>网厂</span></a>
+                  <a href="/subordinate/3"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='3'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/subordinate/3'})"><span>珍珠公司</span></a>
+                  <a href="/subordinate/4"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='4'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/subordinate/4'})"><span>经济开发总公司</span></a>
                 </nav>
               </div>
             </a>
-            <a :class="'nav-item nav-link'+($route.meta.activeTag==='cooperation'?' active':'')"
+            <a href="/cooperation" :class="'nav-item nav-link'+($route.meta.activeTag==='cooperation'?' active':'')"
                @mouseenter="nav2_4=true" @mouseleave="nav2_4=false"
-               @click.stop="$router.push({path:'/cooperation'})">
+               @click.prevent="$router.push({path:'/cooperation'})">
               <span>合作平台</span>
               <div class="nav2" v-show="nav2_4">
                 <nav class="nav nav-pills">
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='cooperation'&&$route.hash==='#product'?' active':'')"
-                     @click.stop="$router.push({path:'/cooperation#product'})"><span>产品展示</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='cooperation'&&$route.hash==='#technology'?' active':'')"
-                     @click.stop="$router.push({path:'/cooperation#technology'})"><span>科技成果</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='cooperation'&&$route.hash==='#hatch'?' active':'')"
-                     @click.stop="$router.push({path:'/cooperation#hatch'})"><span>孵化转化平台</span></a>
+                  <a href="/cooperation#product"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='cooperation'&&$route.hash==='#product'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/cooperation#product'})"><span>产品展示</span></a>
+                  <a href="/cooperation#technology"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='cooperation'&&$route.hash==='#technology'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/cooperation#technology'})"><span>科技成果</span></a>
+                  <a href="/cooperation#hatch"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='cooperation'&&$route.hash==='#hatch'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/cooperation#hatch'})"><span>孵化转化平台</span></a>
                 </nav>
               </div>
             </a>
-            <a :class="'nav-item nav-link'+($route.meta.activeTag==='party'?' active':'')" @mouseenter="nav2_5=true"
+            <a href="/party" :class="'nav-item nav-link'+($route.meta.activeTag==='party'?' active':'')"
+               @mouseenter="nav2_5=true"
                @mouseleave="nav2_5=false"
-               @click.stop="$router.push({path:'/party'})">
+               @click.prevent="$router.push({path:'/party'})">
               <span>党群之窗</span>
               <div class="nav2" v-show="nav2_5">
                 <nav class="nav nav-pills">
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='party'&&$route.params.content==='dynamic'?' active':'')"
-                     @click.stop="$router.push({path:'/party/dynamic'})"><span>党建动态</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='party'&&$route.params.content==='tradeUnions'?' active':'')"
-                     @click.stop="$router.push({path:'/party/tradeUnions'})"><span>公司工会</span></a>
+                  <a href="/party/dynamic"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='party'&&$route.params.content==='dynamic'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/party/dynamic'})"><span>党建动态</span></a>
+                  <a href="/party/tradeUnions"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='party'&&$route.params.content==='tradeUnions'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/party/tradeUnions'})"><span>公司工会</span></a>
                 </nav>
               </div>
             </a>
-            <a :class="'nav-item nav-link'+($route.meta.activeTag==='policy'?' active':'')" @mouseenter="nav2_6=true"
+            <a href="/policy" :class="'nav-item nav-link'+($route.meta.activeTag==='policy'?' active':'')"
+               @mouseenter="nav2_6=true"
                @mouseleave="nav2_6=false"
-               @click.stop="$router.push({path:'/policy'})">
+               @click.prevent="$router.push({path:'/policy'})">
               <span>政策法规</span>
               <div class="nav2" v-show="nav2_6">
                 <nav class="nav nav-pills">
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='policy'&&$route.params.content==='public'?' active':'')"
-                     @click.stop="$router.push({path:'/policy/public'})"><span>国家政策</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='policy'&&$route.params.content==='school'?' active':'')"
-                     @click.stop="$router.push({path:'/policy/school'})"><span>学校文件</span></a>
-                  <a :class="'nav-item nav-link'+($route.meta.activeTag==='policy'&&$route.params.content==='company'?' active':'')"
-                     @click.stop="$router.push({path:'/policy/company'})"><span>公司制度</span></a>
+                  <a href="/policy/public"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='policy'&&$route.params.content==='public'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/policy/public'})"><span>国家政策</span></a>
+                  <a href="/policy/school"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='policy'&&$route.params.content==='school'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/policy/school'})"><span>学校文件</span></a>
+                  <a href="/policy/company"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='policy'&&$route.params.content==='company'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/policy/company'})"><span>公司制度</span></a>
                 </nav>
               </div>
             </a>
-            <a :class="'nav-item nav-link'+($route.meta.activeTag==='directory'?' active':'')"
-               @click.stop="$router.push({path:'/directory'})"><span>服务指南</span></a>
+            <a href="/directory" :class="'nav-item nav-link'+($route.meta.activeTag==='directory'?' active':'')"
+               @click.prevent="$router.push({path:'/directory'})"><span>服务指南</span></a>
           </nav>
         </div>
       </div>
@@ -162,9 +184,11 @@
         .nav-item:hover, .active {
           background-color: rgb(19, 56, 145);
         }
-        .active{
+
+        .active {
           font-weight: bold;
         }
+
         .nav-item {
           color: white;
           border-radius: 0;

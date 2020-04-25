@@ -10,7 +10,6 @@ import "./utils/ElementUI";
 import "./utils/filter";
 import "./utils/commonPro";
 import "./assets/fonts/font.scss";
-//import $ from "jquery";
 
 Vue.use(VueWechatTitle);
 Vue.config.productionTip = false;
