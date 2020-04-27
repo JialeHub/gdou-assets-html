@@ -56,15 +56,19 @@
 <style lang="scss">
   #Foot {
     margin-top: 20px;
+
     .text {
       font-size: 14px;
       padding: 6px 6px;
-      .text1{
+
+      .text1 {
         color: rgb(228, 228, 228);
       }
-      .text2{
-        color: rgb(188,188,188);
+
+      .text2 {
+        color: rgb(188, 188, 188);
       }
+
       .row {
         .col {
           padding: 3px 12px;

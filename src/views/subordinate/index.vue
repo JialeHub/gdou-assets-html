@@ -5,21 +5,19 @@
 </template>
 
 <script>
-export default {
-  name: "subordinate",
-  data() {
-    return {
-
-    };
-  },
-  mounted() {
-    console.log(this.$route);
-  },
-  methods: {},
-};
+  export default {
+    name: "subordinate",
+    data() {
+      return {};
+    },
+    mounted() {
+      console.log(this.$route);
+    },
+    methods: {},
+  };
 </script>
 
 <style lang="scss">
-#subordinate {
-}
+  #subordinate {
+  }
 </style>

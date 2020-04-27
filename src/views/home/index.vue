@@ -41,7 +41,7 @@
                 </div>
                 <div class="titleR col-3 d-flex align-items-center justify-content-center pr-0"
                      style="border-bottom: rgb(215,215,215) solid 2px;">
-                  <span style="color: #a1a1a1;font-size: 15px;">更多</span>
+                  <a href="/dynamic/news">更多</a>
                 </div>
               </div>
               <div class="msgLinkBox pt-3" style="flex: 1">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="titleR col-3 d-flex align-items-center justify-content-end pr-3"
                      style="border-bottom: rgb(215,215,215) solid 2px;">
-                  <span style="color: #a1a1a1;font-size: 15px;">更多</span>
+                  <a href="/cooperation#hatch">更多</a>
                 </div>
               </div>
               <div class="msgLinkBox pt-3" style="flex: 1">
@@ -94,7 +94,6 @@
                     </li>
                   </ul>
                 </div>
-
               </div>
             </div>
           </div>
@@ -110,7 +109,7 @@
                 </div>
                 <div class="titleR col-3 d-flex align-items-center justify-content-center pr-0"
                      style="border-bottom: rgb(215,215,215) solid 2px;">
-                  <span style="color: #a1a1a1;font-size: 15px;">更多</span>
+                  <a href="/dynamic/notice">更多</a>
                 </div>
               </div>
               <div class="msgLinkBox pt-3" style="flex: 1">
@@ -149,6 +148,17 @@
 
 <style lang="scss">
   #home {
+    .titleR {
+      a {
+        color: #a1a1a1;
+        font-size: 15px;
+      }
+
+      a:hover {
+        color: #204BB0;
+      }
+    }
+
     .carousel {
       height: 420px;
 
@@ -162,7 +172,6 @@
           }
         }
       }
-
     }
   }
 </style>
