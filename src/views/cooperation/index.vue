@@ -1,7 +1,7 @@
 <template>
   <div id="cooperation">
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
         <div class="col nav flex-column nav-pills" style="max-width:200px" id="v-pills-tab" role="tablist"
              aria-orientation="vertical">
           <div
@@ -19,7 +19,7 @@
              aria-controls="v-pills-pills" aria-selected="false">孵化转化平台</a>
         </div>
         <div class="col tab-content" id="v-pills-tabContent">
-          <div class="tab-pane fade show active" style="" id="v-pills-product" role="tabpanel"
+          <div class="tab-pane fade h-100 show active h-100" id="v-pills-product" role="tabpanel"
                aria-labelledby="v-pills-product-tab">
             <div class="contentCard d-flex flex-column h-100">
               <div class="title row w-100 align-self-center mt-1" style="padding:0 15px;height: 50px;">
@@ -36,39 +36,24 @@
                   <a href="/cooperation#product" class="bread breadNav">- 产品展示</a>
                 </div>
               </div>
-              <div class="contentBox" style="flex: 1;padding:16px 15px">
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
+              <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
+                <ul class="d-flex flex-column flex-grow-1">
+                  <li class="pt-2 pb-3"> <h3 style="color: #333;font-weight: bold;text-align: center">产品展示</h3></li>
+                  <li class="row align-self-center w-100 pb-2 pt-2 d-flex mb-4" v-for="item in 6">
+                    <div class="img" style="flex: 0 0 120px">
+                      <img :src="require('@/assets/test.png')" style="border-radius: 50%" class="img-fluid" alt="">
+                    </div>
+                    <div class="msg d-flex flex-column pl-3" style="flex: 1">
+                      <div class="title " style="color: #204BB0;font-size: 20px;">产品标题</div>
+                      <div class="text" style="font-size: 16px;color: #333;text-align: justify">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容 <br></div>
+                    </div>
+                  </li>
+                </ul>
+                <pagination ref="pagination" @getNewData=""/>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade" id="v-pills-technology" role="tabpanel" aria-labelledby="v-pills-technology-tab">
+          <div class="tab-pane fade h-100" id="v-pills-technology" role="tabpanel" aria-labelledby="v-pills-technology-tab">
             <div class="contentCard d-flex flex-column h-100">
               <div class="title row w-100 align-self-center mt-1" style="padding:0 15px;height: 50px;">
                 <div class="titleL col d-flex align-items-center pl-0"
@@ -84,39 +69,24 @@
                   <a href="/cooperation#technology" class="bread breadNav">- 科技成果</a>
                 </div>
               </div>
-              <div class="contentBox" style="flex: 1;padding:16px 15px">
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
+              <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
+                <ul class="row d-flex flex-grow-1 ">
+                  <li class="col-12 pt-3 pb-4"> <h3 style="color: #333;font-weight: bold;text-align: center">科技成果</h3></li>
+                  <li class="col-6 justify-content-center  align-self-center pb-2 pt-2 d-flex mb-4" v-for="item in 6">
+                    <div class="card" style="width: 22rem;">
+                      <img class="card-img-top" :src="require('@/assets/test2.png')" alt="Card image cap">
+                      <div class="card-body">
+                        <h4>标题</h4>
+                        <p class="card-text" style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus.</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <pagination ref="pagination" @getNewData=""/>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade" id="v-pills-hatch" role="tabpanel" aria-labelledby="v-pills-hatch-tab">
+          <div class="tab-pane fade h-100" id="v-pills-hatch" role="tabpanel" aria-labelledby="v-pills-hatch-tab">
             <div class="contentCard d-flex flex-column h-100">
               <div class="title row w-100 align-self-center mt-1" style="padding:0 15px;height: 50px;">
                 <div class="titleL col d-flex align-items-center pl-0"
@@ -132,35 +102,20 @@
                   <a href="/cooperation#hatch" class="bread breadNav">- 孵化转化平台</a>
                 </div>
               </div>
-              <div class="contentBox" style="flex: 1;padding:16px 15px">
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
+              <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
+                <ul class="row d-flex flex-grow-1 ">
+                  <li class="col-12 pt-3 pb-4"> <h3 style="color: #333;font-weight: bold;text-align: center">科技成果</h3></li>
+                  <li class="col-6 justify-content-center  align-self-center pb-2 pt-2 d-flex mb-4" v-for="item in 6">
+                    <div class="card" style="width: 22rem;">
+                      <img class="card-img-top" :src="require('@/assets/test2.png')" alt="Card image cap">
+                      <div class="card-body">
+                        <h4>标题</h4>
+                        <p class="card-text" style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus.</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <pagination ref="pagination" @getNewData=""/>
               </div>
             </div>
           </div>

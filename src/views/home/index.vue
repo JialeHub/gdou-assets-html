@@ -11,13 +11,13 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="http://code.z01.com/img/2016instbg_01.jpg" class="d-block w-100" alt="...">
+                <img src="http://code.z01.com/img/2016instbg_01.jpg" class="d-block w-100 img-fluid" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="http://code.z01.com/img/2016instbg_02.jpg" class="d-block w-100" alt="...">
+                <img src="http://code.z01.com/img/2016instbg_02.jpg" class="d-block w-100 img-fluid" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="http://code.z01.com/img/2016instbg_03.jpg" class="d-block w-100" alt="...">
+                <img src="http://code.z01.com/img/2016instbg_03.jpg" class="d-block w-100 img-fluid" alt="...">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="col col-lg-4 col-12 mt-3 mt-lg-0 pr-lg-0">
-          <div class="" style="width: 100%;height: 420px;border: 1px solid rgb(215,215,215);">
+          <div class="part2" style="width: 100%;border: 1px solid rgb(215,215,215);">
             <div class="msgLinkCard d-flex flex-column h-100">
               <div class="title row w-100 align-self-center mt-1" style="padding:0 15px;height: 50px;">
                 <div class="titleL col-9 d-flex align-items-center pl-0"
@@ -85,10 +85,10 @@
                         <div class="w-100" style="background-color: #8dcce8;height: 43%;"></div>
                         <div class="mt-2 text w-100"
                              style="text-align: justify;font-size:14px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 8;overflow: hidden;">
-                          <span style="">萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
-                          <span style="">萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
-                          <span style="">萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
-                          <span style="">萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
+                          <span>萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
+                          <span>萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
+                          <span>萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
+                          <span>萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
                         </div>
                       </div>
                     </li>
@@ -148,6 +148,12 @@
 
 <style lang="scss">
   #home {
+    .part2{
+      height: 100%;
+      @media screen and (max-width: 992px){
+        height: 420px;
+      }
+    }
     .titleR {
       a {
         color: #a1a1a1;
@@ -155,22 +161,7 @@
       }
 
       a:hover {
-        color: #204BB0;
-      }
-    }
-
-    .carousel {
-      height: 420px;
-
-      .carousel-inner {
-        .carousel-item {
-          height: 420px;
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
+        color: #214dc8;
       }
     }
   }

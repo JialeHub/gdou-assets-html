@@ -1,6 +1,7 @@
 <template>
   <div id="subordinate">
     下属企业
+    <pagination ref="pagination" @getNewData=""/>
   </div>
 </template>
 
@@ -8,7 +9,9 @@
   export default {
     name: "subordinate",
     data() {
-      return {};
+      return {
+
+      };
     },
     mounted() {
       console.log(this.$route);

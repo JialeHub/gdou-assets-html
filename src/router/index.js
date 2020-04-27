@@ -63,7 +63,7 @@ const routes = [
   {
     path: "/subordinate",
     name: "subordinate",
-    component: () => import("@/views/subordinate"),
+    component: () => import("@/views/subordinate/index"),
     meta: {
       title: "下属企业", // 标题设置
       activeTag: 'subordinate'
@@ -72,7 +72,7 @@ const routes = [
   {
     path: "/subordinate/:content/",
     name: "subordinateInside",
-    component: () => import("@/views/subordinate"),
+    component: () => import("@/views/subordinate/index"),
     meta: {
       title: "下属企业", // 标题设置
       activeTag: 'subordinate'
@@ -92,7 +92,7 @@ const routes = [
   {
     path: "/subordinate",
     name: "subordinate",
-    component: () => import("@/views/subordinate"),
+    component: () => import("@/views/subordinate/index"),
     meta: {
       title: "下属企业", // 标题设置
       activeTag: 'subordinate'
@@ -101,7 +101,7 @@ const routes = [
   {
     path: "/subordinate/:content/",
     name: "subordinateInside",
-    component: () => import("@/views/subordinate"),
+    component: () => import("@/views/subordinate/index"),
     meta: {
       title: "下属企业", // 标题设置
       activeTag: 'subordinate'

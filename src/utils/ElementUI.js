@@ -1,4 +1,10 @@
 import Vue from "vue";
-import { Divider } from "element-ui";
+import { Pagination } from "element-ui";
 
-Vue.use(Divider);
+Vue.use(Pagination);
+
+
+import CustomizedPagination from '@/components/Pagination'
+
+
+Vue.component('Pagination', CustomizedPagination);

@@ -1,9 +1,9 @@
 <template>
   <div id="Head">
     <!--------------------------头部Start-------------------------->
-    <div class="container-fluid">
+    <div class="container-fluid h-100">
       <!--banner-->
-      <div class="row bannerOut">
+      <div class="row bannerOut h-100">
         <div class="container-xl">
           <div class="row">
             <div class="banner" :style="'background-image: url(' + require('@/assets/img/banner.png')+')'">
