@@ -74,18 +74,18 @@
               <span>下属企业</span>
               <div class="nav2" v-show="nav2_3">
                 <nav class="nav nav-pills">
-                  <a href="/subordinate/1"
-                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='1'?' active':'')"
-                     @click.prevent.stop="$router.push({path:'/subordinate/1'})"><span>船舶公司</span></a>
-                  <a href="/subordinate/2"
-                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='2'?' active':'')"
-                     @click.prevent.stop="$router.push({path:'/subordinate/2'})"><span>网厂</span></a>
-                  <a href="/subordinate/3"
-                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='3'?' active':'')"
-                     @click.prevent.stop="$router.push({path:'/subordinate/3'})"><span>珍珠公司</span></a>
-                  <a href="/subordinate/4"
-                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='4'?' active':'')"
-                     @click.prevent.stop="$router.push({path:'/subordinate/4'})"><span>经济开发总公司</span></a>
+                  <a href="/subordinate/news"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='news'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/subordinate/news'})"><span>船舶公司</span></a>
+                  <a href="/subordinate/notice"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='notice'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/subordinate/notice'})"><span>网厂</span></a>
+                  <a href="/subordinate/three"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='three'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/subordinate/three'})"><span>珍珠公司</span></a>
+                  <a href="/subordinate/four"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='subordinate'&&$route.params.content==='four'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/subordinate/four'})"><span>经济开发总公司</span></a>
                 </nav>
               </div>
             </a>

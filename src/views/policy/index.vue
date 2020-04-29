@@ -91,7 +91,7 @@
                       style="bottom: -2px;position: relative;line-height: 46px; border-bottom: #204BB0 solid 2px;height: 100%;">公司制度</span>
                 </div>
                 <div class="titleR col-auto d-flex align-items-center justify-content-center pr-0"
-                     style="border-bottom: rgb(215,215,215) solid 2px;">
+                     style=" border-bottom: rgb(215,215,215) solid 2px;">
                   <span class="bread">当前位置：</span>
                   <a href="/" class="bread breadNav">首页</a>
                   <a href="/policy" class="bread breadNav">- 政策法规</a>
