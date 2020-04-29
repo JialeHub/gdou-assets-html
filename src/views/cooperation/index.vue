@@ -104,7 +104,7 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="row d-flex flex-grow-1 ">
-                  <li class="col-12 pt-3 pb-4"> <h3 style="color: #333;font-weight: bold;text-align: center">科技成果</h3></li>
+                  <li class="col-12 pt-3 pb-4"> <h3 style="color: #333;font-weight: bold;text-align: center">孵化转化平台</h3></li>
                   <li class="col-6 justify-content-center  align-self-center pb-2 pt-2 d-flex mb-4" v-for="item in 6">
                     <div class="card" style="width: 22rem;">
                       <img class="card-img-top" :src="require('@/assets/test2.png')" alt="Card image cap">
