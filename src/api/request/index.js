@@ -1,7 +1,6 @@
 import axios from "axios";
 import qs from "qs";
 import store from "@/store";
-import { Dialog } from "vant";
 import router from "@/router";
 
 let errorMsg = "";
@@ -57,18 +56,7 @@ service.interceptors.response.use(
         if (msg === errorMsg) return;
         errorMsg = msg;
       }
-    } else if (code === 401) {
-      Dialog.alert({
-        title: "提示",
-        message: "登陆过期，请重新登陆"
-      }).then(() => {
-        store.dispatch("setToken");
-        store.dispatch("changeActive", {
-          key: "fieldActive",
-          value: 1
-        });
-      });
-    }
+    } else if (code === 401) { }
     return Promise.reject(error);
   }
 );

@@ -40,38 +40,11 @@
                 </div>
               </div>
               <div class="contentBox" style="flex: 1;padding:16px 15px">
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
+                <div class="htmlBox" v-html="introduce"></div>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade h-100" id="v-pills-team" role="tabpanel" aria-labelledby="v-pills-team-tab">
+          <div class="tab-pane fade h-100" id="v-pills-team" role="tabpanel" aria-labelledby="v-pills-team-tab" style="background-color: rgb(253,253,253)">
             <div class="contentCard d-flex flex-column h-100">
               <div class="title row w-100 align-self-center mt-1" style="padding:0 15px;height: 50px;">
                 <div class="titleL col d-flex align-items-center pl-0"
@@ -88,38 +61,24 @@
                 </div>
               </div>
               <div class="contentBox" style="flex: 1;padding:16px 15px">
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
+                <ul class="row">
+                  <li class="col-12" v-for="item in teamMember" v-if="item.sequence>=100" :key="item.id" style="max-width:93%;margin-left: 3%;padding: 20px 20px;background-color: rgb(255,255,255);border-radius: 10px;margin-top: 10px;margin-bottom: 30px;">
+                    <h3 class="name" style="color: #204BB0;font-weight: bold;font-size: 24px;letter-spacing:2px;">{{item.name}}</h3>
+                    <p style="color: #333333;margin-bottom: 2px;font-size: 15px;">{{item.content}}</p>
+                    <p style="color: #204BB0;margin-bottom: 2px;font-size: 14px;">联系电话：{{item.phone}}</p>
+                  </li>
+                  <li class="col-6" v-for="item2 in teamMember" v-if="item2.sequence<100" :key="item2.id" style="max-width:45%;margin-left: 3%;padding: 20px 20px;background-color: rgb(255,255,255);border-radius: 10px;margin-top: 10px;margin-bottom: 30px;">
+                    <h3 class="name" style="color: #204BB0;font-weight: bold;font-size: 24px;letter-spacing:2px;">{{item2.name}}</h3>
+                    <p style="color: #333333;margin-bottom: 2px;font-size: 15px;">{{item2.content}}</p>
+                    <p style="color: #204BB0;margin-bottom: 2px;font-size: 14px;">联系电话：{{item2.phone}}</p>
+                  </li>
+                </ul>
+
               </div>
             </div>
           </div>
-          <div class="tab-pane fade h-100" id="v-pills-framework" role="tabpanel" aria-labelledby="v-pills-framework-tab">
+          <div class="tab-pane fade h-100" id="v-pills-framework" role="tabpanel"
+               aria-labelledby="v-pills-framework-tab">
             <div class="contentCard d-flex flex-column h-100">
               <div class="title row w-100 align-self-center mt-1" style="padding:0 15px;height: 50px;">
                 <div class="titleL col d-flex align-items-center pl-0"
@@ -135,12 +94,8 @@
                   <a href="/profile#framework" class="bread breadNav">- 组织架构</a>
                 </div>
               </div>
-              <div class="contentBox" style="flex: 1;padding:16px 15px">
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
+              <div class="contentBox" style="flex: 1;padding:16px 15px;max-width: 100%;margin-top: 10px;">
+                <img :src="frameworkImg" alt="" style="max-width: 100%">
               </div>
             </div>
           </div>
@@ -161,34 +116,16 @@
                 </div>
               </div>
               <div class="contentBox" style="flex: 1;padding:16px 15px">
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容 <br>
+                <h3 style="text-align: center;font-weight: bold;color: #333333;margin-top: 30px;">
+                  广东海洋大学湛江资产经营有限公司联系方式</h3>
+                <div style="padding-left: 20px;padding-top: 50px;">
+                  <p style="font-size: 16px">电话：{{this.contact.phone}}</p>
+                  <p style="font-size: 16px">邮箱：{{this.contact.postbox}}</p>
+                  <p style="font-size: 16px">地址：{{this.contact.address}}</p>
+                  <p style="font-size: 16px">邮编：{{this.contact.postcode}}</p>
+                  <p style="font-size: 16px">公众微信号：{{this.contact.publicAccounts}}</p>
+                  <p style="font-size: 16px">微信号：{{this.contact.weChat}}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -199,10 +136,22 @@
 </template>
 
 <script>
+  import {
+    companyContactGetApi,
+    companyFrameworkImgGetApi,
+    companyIntroduceGetApi,
+    teamMemberGetApi
+  } from "@/api/allApi";
+
   export default {
     name: "profile",
     data() {
-      return {};
+      return {
+        introduce: "",
+        contact: {},
+        frameworkImg: "",
+        teamMember: []
+      };
     },
     watch: {
       '$route.hash'(v) {
@@ -218,8 +167,49 @@
         str = str.replace("-tab", '');
         $('#profile #v-pills-' + str + '-tab').tab('show')
       }
+      this.getCompanyContact();
+      this.getCompanyFrameworkImg();
+      this.getCompanyIntroduce();
+      this.getTeamMember();
     },
-    methods: {},
+    methods: {
+      getCompanyContact() {
+        companyContactGetApi().then(response => {
+          if (response.data.code === 200) {
+            this.contact = response.data.data
+          }
+        }).catch(error => {
+          console.log(error);
+        })
+      },
+      getCompanyFrameworkImg() {
+        companyFrameworkImgGetApi().then(response => {
+          if (response.data.code === 200) {
+            this.frameworkImg = response.data.data.frameworkImg
+          }
+        }).catch(error => {
+          console.log(error);
+        })
+      },
+      getCompanyIntroduce() {
+        companyIntroduceGetApi().then(response => {
+          if (response.data.code === 200) {
+            this.introduce = response.data.data.content
+          }
+        }).catch(error => {
+          console.log(error);
+        })
+      },
+      getTeamMember() {
+        teamMemberGetApi().then(response => {
+          if (response.data.code === 200) {
+            this.teamMember = response.data.data
+          }
+        }).catch(error => {
+          console.log(error);
+        })
+      }
+    },
   };
 </script>
 

@@ -18,7 +18,7 @@
     name: "pagination",
     data() {
       return {
-        total: 1210,
+        total: 0,
         current: 1,
         size: 20,
         page_sizes: [10, 20, 50, 100, 200],

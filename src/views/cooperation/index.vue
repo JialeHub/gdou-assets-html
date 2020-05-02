@@ -38,22 +38,24 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="pt-2 pb-3"> <h3 style="color: #333;font-weight: bold;text-align: center">产品展示</h3></li>
-                  <li class="row align-self-center w-100 pb-2 pt-2 d-flex mb-4" v-for="item in 6">
+                  <li class="pt-2 pb-3"><h3 style="color: #333;font-weight: bold;text-align: center">产品展示</h3></li>
+                  <li class="row align-self-center w-100 pb-2 pt-2 d-flex mb-4" v-for="item1 in list1" :key="item1.id">
                     <div class="img" style="flex: 0 0 120px">
-                      <img :src="require('@/assets/test.png')" style="border-radius: 50%" class="img-fluid" alt="">
+                      <img :src="item1.cover" style="border-radius: 50%" class="img-fluid" alt="">
                     </div>
                     <div class="msg d-flex flex-column pl-3" style="flex: 1">
-                      <div class="title " style="color: #204BB0;font-size: 20px;">产品标题</div>
-                      <div class="text" style="font-size: 16px;color: #333;text-align: justify">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容 <br></div>
+                      <div class="title " style="color: #204BB0;font-size: 20px;">{{item1.name}}</div>
+                      <div class="text" style="font-size: 16px;color: #333;text-align: justify">{{item1.content}}<br>
+                      </div>
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination1" @getNewData="getPageCooperation1"/>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade h-100" id="v-pills-technology" role="tabpanel" aria-labelledby="v-pills-technology-tab">
+          <div class="tab-pane fade h-100" id="v-pills-technology" role="tabpanel"
+               aria-labelledby="v-pills-technology-tab">
             <div class="contentCard d-flex flex-column h-100">
               <div class="title row w-100 align-self-center mt-1" style="padding:0 15px;height: 50px;">
                 <div class="titleL col d-flex align-items-center pl-0"
@@ -71,18 +73,20 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="row d-flex flex-grow-1 ">
-                  <li class="col-12 pt-3 pb-4"> <h3 style="color: #333;font-weight: bold;text-align: center">科技成果</h3></li>
-                  <li class="col-6 justify-content-center  align-self-center pb-2 pt-2 d-flex mb-4" v-for="item in 6">
+                  <li class="col-12 pt-3 pb-4"><h3 style="color: #333;font-weight: bold;text-align: center">科技成果</h3>
+                  </li>
+                  <li class="col-6 justify-content-center  align-self-center pb-2 pt-2 d-flex mb-4"
+                      v-for="item2 in list2" :key="item2.id">
                     <div class="card" style="width: 22rem;">
-                      <img class="card-img-top" :src="require('@/assets/test2.png')" alt="Card image cap">
+                      <img class="card-img-top" :src="item2.cover" alt="">
                       <div class="card-body">
-                        <h4>标题</h4>
-                        <p class="card-text" style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus.</p>
+                        <h4>{{item2.name}}</h4>
+                        <p class="card-text" style="text-align: justify">{{item2.content}}</p>
                       </div>
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination2" @getNewData="getPageCooperation2"/>
               </div>
             </div>
           </div>
@@ -104,18 +108,20 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="row d-flex flex-grow-1 ">
-                  <li class="col-12 pt-3 pb-4"> <h3 style="color: #333;font-weight: bold;text-align: center">孵化转化平台</h3></li>
-                  <li class="col-6 justify-content-center  align-self-center pb-2 pt-2 d-flex mb-4" v-for="item in 6">
+                  <li class="col-12 pt-3 pb-4"><h3 style="color: #333;font-weight: bold;text-align: center">孵化转化平台</h3>
+                  </li>
+                  <li class="col-6 justify-content-center  align-self-top pb-2 pt-2 d-flex mb-4"
+                      v-for="item3 in list3" :key="item3.id">
                     <div class="card" style="width: 22rem;">
-                      <img class="card-img-top" :src="require('@/assets/test2.png')" alt="Card image cap">
+                      <img class="card-img-top" :src="item3.cover" alt="">
                       <div class="card-body">
-                        <h4>标题</h4>
-                        <p class="card-text" style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus.</p>
+                        <h4>{{item3.name}}</h4>
+                        <p class="card-text" style="text-align: justify">{{item3.content}}</p>
                       </div>
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination3" @getNewData="getPageCooperation3"/>
               </div>
             </div>
           </div>
@@ -126,10 +132,16 @@
 </template>
 
 <script>
+  import {pageCooperationApi} from "@/api/allApi";
+
   export default {
     name: "cooperation",
     data() {
-      return {};
+      return {
+        list1: [],
+        list2: [],
+        list3: []
+      };
     },
     watch: {
       '$route.hash'(v) {
@@ -145,8 +157,63 @@
         str = str.replace("-tab", '');
         $('#cooperation #v-pills-' + str + '-tab').tab('show')
       }
+      setTimeout(() => {
+        this.getPageCooperation1();
+      })
     },
-    methods: {},
+    methods: {
+      getPageCooperation1() {
+        let pagination = this.$refs.pagination1;
+        console.log(pagination);
+        let param = {
+          pagination: pagination.current - 1,
+          size: pagination.size,
+          typeId: 0,
+        };
+        pageCooperationApi(param).then(response => {
+          if (response.data.code === 200) {
+            this.list1 = response.data.data.list;
+            pagination.total = response.data.data.count;
+            console.log(pagination.total);
+            this.getPageCooperation2()
+          }
+        }).catch(error => {
+          this.getPageCooperation2()
+        })
+      },
+      getPageCooperation2() {
+        let pagination = this.$refs.pagination2;
+        let param = {
+          pagination: pagination.current - 1,
+          size: pagination.size,
+          typeId: 1,
+        };
+        pageCooperationApi(param).then(response => {
+          if (response.data.code === 200) {
+            this.list2 = response.data.data.list;
+            pagination.total = response.data.data.count;
+            this.getPageCooperation3()
+          }
+        }).catch(error => {
+          this.getPageCooperation3()
+        })
+      },
+      getPageCooperation3() {
+        let pagination = this.$refs.pagination3;
+        let param = {
+          pagination: pagination.current - 1,
+          size: pagination.size,
+          typeId: 2,
+        };
+        pageCooperationApi(param).then(response => {
+          if (response.data.code === 200) {
+            this.list3 = response.data.data.list;
+            pagination.total = response.data.data.count;
+          }
+        }).catch(error => {
+        })
+      },
+    },
   };
 </script>
 

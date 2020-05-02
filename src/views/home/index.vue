@@ -5,19 +5,20 @@
         <div class="col col-lg-8 col-12 pl-lg-0">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" v-if="carouselItem.length>0" :data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" v-if="index!==0&&carouselItem.length>1" v-for="index in carouselItem" :key="index"
+                  :data-slide-to="index"></li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="http://code.z01.com/img/2016instbg_01.jpg" class="d-block w-100 img-fluid" alt="...">
+                <a :href="carouselItem[0].link" target="_blank" v-if="carouselItem.length>0">
+                  <img :src="carouselItem[0].coverUrl" class="d-block w-100 img-fluid" alt="">
+                </a>
               </div>
-              <div class="carousel-item">
-                <img src="http://code.z01.com/img/2016instbg_02.jpg" class="d-block w-100 img-fluid" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="http://code.z01.com/img/2016instbg_03.jpg" class="d-block w-100 img-fluid" alt="...">
+              <div class="carousel-item" v-if="index!==0" v-for="(item2,index2) in carouselItem" :key="item2.id">
+                <a :href="item2.link" target="_blank" v-if="carouselItem.length>1">
+                  <img :src="item2.coverUrl" class="d-block w-100 img-fluid" alt="">
+                </a>
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -80,15 +81,17 @@
                 <div class="listBox h-100 pl-3" style="overflow-y: hidden">
                   <ul class="h-100"
                       style="display: -webkit-box;-webkit-overflow-scrolling: touch;-ms-overflow-style: none;overflow: -moz-scrollbars-none;">
-                    <li v-for="item in 8" class="pr-4  pl-2 pb-2" style="width: 33.4%;">
-                      <div style="height: 100%;box-sizing: content-box;">
-                        <div class="w-100" style="background-color: #8dcce8;height: 43%;"></div>
-                        <div class="mt-2 text w-100"
-                             style="text-align: justify;font-size:14px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 8;overflow: hidden;">
-                          <span>萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
-                          <span>萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
-                          <span>萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
-                          <span>萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而萨阿沙尔法国然而</span>
+                    <li v-for="item3 in list3" :key="item3.id" class="pr-4  pl-2 pb-2" style="width: 33.4%;">
+                      <div style="height: 100%;box-sizing: content-box;max-height: 300px;">
+                        <div class="w-100" style="background-color: #8dcce8;height: 55%;">
+                          <img :src="item3.cover" alt="" width="100%" height="100%">
+                        </div>
+                        <div class="mt-2 text w-100" style="font-weight: bold;font-size: 15px;text-align: justify;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;">
+                          {{item3.name}}
+                        </div>
+                        <div class="mt-2 text w-100" style="text-align: justify;font-size:14px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;overflow: hidden;">
+                          <span></span>
+                          {{item3.content}}
                         </div>
                       </div>
                     </li>
@@ -134,26 +137,59 @@
 </template>
 
 <script>
+  import {pageCooperationApi, slideShowGetApi} from "@/api/allApi";
+
   export default {
     name: "Home",
     data() {
-      return {};
+      return {
+        carouselItem: [],
+        list3: []
+      };
     },
     mounted() {
-      console.log(this.$route);
+      this.getCarouselItem();
+      this.getPageCooperation3();
     },
-    methods: {},
+    methods: {
+      getCarouselItem() {
+        slideShowGetApi().then(response => {
+          if (response.data.code === 200) {
+            response.data.data.forEach(item => {
+              if (item.slideShowType === 0) {
+                this.carouselItem.push(item);
+              }
+            })
+          }
+        }).catch(error => { })
+      },
+      getPageCooperation3() {
+        let param = {
+          pagination: 0,
+          size: 20,
+          typeId: 2,
+        };
+        pageCooperationApi(param).then(response => {
+          if (response.data.code === 200) {
+            console.log(this.list3);
+            this.list3 = response.data.data.list;
+          }
+        }).catch(error => {
+        })
+      },
+    },
   };
 </script>
 
 <style lang="scss">
   #home {
-    .part2{
+    .part2 {
       height: 100%;
-      @media screen and (max-width: 992px){
+      @media screen and (max-width: 992px) {
         height: 420px;
       }
     }
+
     .titleR {
       a {
         color: #a1a1a1;

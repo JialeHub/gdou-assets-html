@@ -110,7 +110,7 @@ module.exports = {
     proxy: {
       "/devApi/": {
         // 目标:指向网络地址
-        target: "http://129.204.189.149:8084",
+        target: "http://112.74.86.165:8080",
         // webpack属性，映射一个host
         changeOrigin: true,
         pathRewrite: {
