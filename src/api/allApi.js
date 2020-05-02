@@ -9,6 +9,15 @@ export const slideShowGetApi = (data) => axiosG("slideShow/list", data);
 
 /**********轮播图**********/
 
+/*********子公司模块*********/
+
+//子公司查询
+export const subsidiaryFindApi = (data) => axiosG("subsidiary/"+ data.id);
+//获取子公司列表
+export const subsidiaryGetApi = (data) => axiosG("subsidiary/nameList", data);
+
+
+/*********子公司模块*********/
 
 /**********合作平台**********/
 
