@@ -120,6 +120,9 @@
                   <a href="/party/tradeUnions"
                      :class="'nav-item nav-link'+($route.meta.activeTag==='party'&&$route.params.content==='tradeUnions'?' active':'')"
                      @click.prevent.stop="$router.push({path:'/party/tradeUnions'})"><span>公司工会</span></a>
+                  <a href="/party/about"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='party'&&$route.params.content==='about'?' active':'')"
+                     @click.prevent.stop="$router.push({path:'/party/about'})"><span>相关链接</span></a>
                 </nav>
               </div>
             </a>
