@@ -4,7 +4,8 @@
       <div class="row h-100">
         <div class="col nav flex-column nav-pills" style="max-width:200px" id="v-pills-tab" role="tablist"
              aria-orientation="vertical">
-          <div style="padding: 0 16px;font-size: 18px;color: #fff; line-height: 60px; height: 60px;background: rgb(32,75,176);">
+          <div
+              style="padding: 0 16px;font-size: 18px;color: #fff; line-height: 60px; height: 60px;background: rgb(32,75,176);">
             公司动态
           </div>
           <a class="nav-link active" id="v-pills-news-tab" data-toggle="pill" href="#v-pills-news" role="tab"
@@ -34,16 +35,18 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 6">
+                  <li class="row align-self-center w-100 pb-3" v-for="item0 in articleList0" :key="item0.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
+                      <a :href="'/dynamic/news/'+item0.id">
+                        {{item0.title}}
+                      </a>
                     </div>
                     <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      {{item0.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination0" @getNewData="getArticleList(0)"/>
               </div>
             </div>
           </div>
@@ -65,16 +68,18 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 2">
+                  <li class="row align-self-center w-100 pb-3" v-for="item1 in articleList1" :key="item1.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
+                      <a :href="'/dynamic/news/'+item1.id">
+                        {{item1.title}}
+                      </a>
                     </div>
                     <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      {{item1.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination1" @getNewData="getArticleList(1)"/>
               </div>
             </div>
           </div>
@@ -85,10 +90,15 @@
 </template>
 
 <script>
+  import {articleGetApi} from "@/api/allApi";
+
   export default {
     name: "dynamic",
     data() {
-      return {};
+      return {
+        articleList0: [],
+        articleList1: [],
+      };
     },
     watch: {
       '$route.params.content'(v) {
@@ -102,14 +112,40 @@
         $('#dynamic #v-pills-' + this.$route.params.content.replace("#", "") + '-tab').tab('show')
       }
       if (this.$route.hash) {
-        let str = this.$route.hash.replace("#", "");
-        str = str.replace("v-pills-", '');
-        str = str.replace("-tab", '');
-        this.$router.push({path: '/dynamic/' + str});
-        //$('#dynamic #v-pills-' + str + '-tab').tab('show')
+        if (this.$route.hash.indexOf("v-pills-") !== -1) {
+          let str = this.$route.hash.replace("#", "");
+          str = str.replace("v-pills-", '');
+          str = str.replace("-tab", '');
+          this.$router.push({path: '/dynamic/' + str});
+        }
       }
+      this.getArticleList(0)
+        .then(() => {
+          this.getArticleList(1);
+        })
     },
-    methods: {},
+    methods: {
+      getArticleList(typeId) {
+        /*获取文章，传入id（pagination要与id对应），输出对应数组*/
+        return new Promise((resolve, reject) => {
+          let pagination= this.$refs["pagination" + typeId];
+          let param = {
+            pagination: pagination.current - 1,
+            size: pagination.size,
+            typeId,
+            title: ""
+          };
+          articleGetApi(param).then(result => {
+            let response = result.data.data;
+            this[`articleList${typeId}`] = response.list;
+            pagination.total = response.count;
+            resolve(response);
+          }).catch((error) => {
+            resolve(error);
+          })
+        })
+      },
+    },
   };
 </script>
 
@@ -142,18 +178,20 @@
       }
 
       .contentCard {
-        .contentBox{
-          ul{
-            li{
-              a{
+        .contentBox {
+          ul {
+            li {
+              a {
                 color: #333;
               }
+
               a:hover {
                 color: #214dc8;
               }
             }
           }
         }
+
         .title {
           .titleR {
             .bread {

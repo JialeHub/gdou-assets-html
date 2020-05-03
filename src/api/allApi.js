@@ -19,6 +19,16 @@ export const subsidiaryGetApi = (data) => axiosG("subsidiary/nameList", data);
 
 /*********子公司模块*********/
 
+/**********文章**********/
+
+//分页获取特定类型的文章列表
+export const articleGetApi = (data) => axiosG("article/page", data);
+// 根据id获取文章详情
+export const articleFindApi = (data) => axiosG("article/"+data.id);
+
+/**********文章**********/
+
+
 /**********合作平台**********/
 
 // 分页查找合作成果

@@ -20,7 +20,7 @@
       return {
         total: 0,
         current: 1,
-        size: 20,
+        size: 10,
         page_sizes: [10, 20, 50, 100, 200],
         layout: "total, prev, pager, next"
       };

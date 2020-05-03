@@ -60,7 +60,7 @@
               <div class="nav2" v-show="nav2_2">
                 <nav class="nav nav-pills">
                   <a href="/dynamic/news"
-                     :class="'nav-item nav -link'+($route.meta.activeTag==='dynamic'&&$route.params.content==='news'?' active':'')"
+                     :class="'nav-item nav-link'+($route.meta.activeTag==='dynamic'&&$route.params.content==='news'?' active':'')"
                      @click.prevent.stop="$router.push({path:'/dynamic/news'})"><span>新闻快讯</span></a>
                   <a href="/dynamic/notice"
                      :class="'nav-item nav-link'+($route.meta.activeTag==='dynamic'&&$route.params.content==='notice'?' active':'')"

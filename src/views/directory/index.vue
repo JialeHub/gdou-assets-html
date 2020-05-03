@@ -20,17 +20,19 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="pt-2 pb-3"> <h4 style="color: #333;font-weight: bold;text-align: center">服务指南</h4></li>
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 2">
+                  <li class="pt-2 pb-3"><h4 style="color: #333;font-weight: bold;text-align: center">服务指南</h4></li>
+                  <li class="row align-self-center w-100 pb-3" v-for="item4 in articleList4" :key="item4.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
+                      <a :href="'/directory/'+item4.id">
+                        {{item4.title}}
+                      </a>
                     </div>
                     <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      {{item4.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination4" @getNewData="getArticleList(4)"/>
               </div>
             </div>
           </div>
@@ -41,15 +43,41 @@
 </template>
 
 <script>
+  import {articleGetApi} from "@/api/allApi";
+
   export default {
     name: "directory",
     data() {
-      return {};
+      return {
+        articleList4: [],
+      };
     },
     mounted() {
       console.log(this.$route);
+      this.getArticleList(4)
     },
-    methods: {},
+    methods: {
+      getArticleList(typeId) {
+        /*获取文章，传入id（pagination要与id对应），输出对应数组*/
+        return new Promise((resolve, reject) => {
+          let pagination = this.$refs["pagination" + typeId];
+          let param = {
+            pagination: pagination.current - 1,
+            size: pagination.size,
+            typeId,
+            title: ""
+          };
+          articleGetApi(param).then(result => {
+            let response = result.data.data;
+            this[`articleList${typeId}`] = response.list;
+            pagination.total = response.count;
+            resolve(response);
+          }).catch((error) => {
+            resolve(error);
+          })
+        })
+      },
+    },
   };
 </script>
 
@@ -64,18 +92,20 @@
       }
 
       .contentCard {
-        .contentBox{
-          ul{
-            li{
-              a{
+        .contentBox {
+          ul {
+            li {
+              a {
                 color: #333;
               }
+
               a:hover {
                 color: #214dc8;
               }
             }
           }
         }
+
         .title {
           .titleR {
             .bread {

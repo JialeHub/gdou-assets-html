@@ -50,10 +50,11 @@ const routes = [
     }
   },
   {
-    path: "/dynamic/:content/:inside",
+    path: "/dynamic/:content/:id",
     name: "dynamicInside",
-    component: () => import("@/views/dynamic/inside"),
+    component: () => import("@/views/article"),
     meta: {
+      titlePre: "公司动态", // 标题设置
       title: "公司动态", // 标题设置
       activeTag: 'dynamic'
     }
@@ -79,10 +80,11 @@ const routes = [
     }
   },
   {
-    path: "/subordinate/:content/:inside",
+    path: "/subordinate/:content/:id",
     name: "subordinateInside",
-    component: () => import("@/views/subordinate/inside"),
+    component: () => import("@/views/article"),
     meta: {
+      titlePre: "下属企业", // 标题设置
       title: "下属企业", // 标题设置
       activeTag: 'subordinate'
     }
@@ -108,10 +110,11 @@ const routes = [
     }
   },
   {
-    path: "/subordinate/:content/:inside",
+    path: "/subordinate/:content/:id",
     name: "subordinateInside",
-    component: () => import("@/views/subordinate/inside"),
+    component: () => import("@/views/article"),
     meta: {
+      titlePre: "下属企业", // 标题设置
       title: "下属企业", // 标题设置
       activeTag: 'subordinate'
     }
@@ -148,10 +151,11 @@ const routes = [
     }
   },
   {
-    path: "/party/:content/:inside",
+    path: "/party/:content/:id",
     name: "partyInside",
-    component: () => import("@/views/party/inside"),
+    component: () => import("@/views/article"),
     meta: {
+      titlePre: "党群之窗", // 标题设置
       title: "党群之窗", // 标题设置
       activeTag: 'party'
     }
@@ -177,10 +181,11 @@ const routes = [
     }
   },
   {
-    path: "/policy/:content/:inside",
+    path: "/policy/:content/:id",
     name: "policyInside",
-    component: () => import("@/views/policy/inside"),
+    component: () => import("@/views/article"),
     meta: {
+      titlePre: "政策法律", // 标题设置
       title: "政策法律", // 标题设置
       activeTag: 'policy'
     }
@@ -197,19 +202,11 @@ const routes = [
     }
   },
   {
-    path: "/directory/:content/",
+    path: "/directory/:id",
     name: "directoryInside",
-    component: () => import("@/views/directory"),
+    component: () => import("@/views/article"),
     meta: {
-      title: "服务指南", // 标题设置
-      activeTag: 'directory'
-    }
-  },
-  {
-    path: "/directory/:content/:inside",
-    name: "directoryInside",
-    component: () => import("@/views/directory/inside"),
-    meta: {
+      titlePre: "服务指南", // 标题设置
       title: "服务指南", // 标题设置
       activeTag: 'directory'
     }

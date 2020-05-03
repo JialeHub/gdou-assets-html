@@ -2,7 +2,7 @@
   <div id="app">
     <vue-head v-if="$route.meta.type!=='error'"/>
     <div class="container-xl main d-flex">
-      <div class="row flex-grow-1">
+      <div class="row flex-grow-1" style="max-width: 100%">
         <transition name="fade" mode="out-in">
           <router-view v-wechat-title="$route.meta.title" class="router"/>
         </transition>

@@ -3,21 +3,26 @@
     <div class="container-fluid h-100">
       <div class="row justify-content-center h-100 flex-column">
         <div class="col-12" style="flex: 0;">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" v-if="carouselItem.length>0">
             <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" v-if="carouselItem.length>0" :data-slide-to="0"
+                  class="active"></li>
+              <li data-target="#carouselExampleIndicators" v-if="index!==0" v-for="(item,index) in carouselItem"
+                  :key="item.id"
+                  :data-slide-to="index"></li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="http://code.z01.com/img/2016instbg_01.jpg" class="d-block w-100 img-fluid" alt="...">
+                <a v-if="carouselItem[0].link!=='http://'&&carouselItem.length>0" :href="carouselItem[0].link" target="_blank">
+                  <img :src="carouselItem[0].coverUrl" class="d-block w-100 img-fluid" alt="">
+                </a>
+                <img v-else-if="carouselItem[0].link==='http://'&&carouselItem.length>0" :src="carouselItem[0].coverUrl" class="d-block w-100 img-fluid" alt="">
               </div>
-              <div class="carousel-item">
-                <img src="http://code.z01.com/img/2016instbg_02.jpg" class="d-block w-100 img-fluid" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="http://code.z01.com/img/2016instbg_03.jpg" class="d-block w-100 img-fluid" alt="...">
+              <div class="carousel-item" v-if="index2>0" v-for="(item2,index2) in carouselItem" :key="item2.id">
+                <a v-if="item2.link!=='http://'&&carouselItem.length>1" :href="item2.link" target="_blank">
+                  <img :src="item2.coverUrl" class="d-block w-100 img-fluid" alt="">
+                </a>
+                <img v-else-if="item2.link==='http://'&&carouselItem.length>1" :src="item2.coverUrl" class="d-block w-100 img-fluid" alt="">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -60,16 +65,18 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 2">
+                  <li class="row align-self-center w-100 pb-3" v-for="item2 in articleList2" :key="item2.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
+                      <a :href="'/party/dynamic/'+item2.id">
+                        {{item2.title}}
+                      </a>
                     </div>
                     <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      {{item2.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination2" @getNewData="getArticleList(2)"/>
               </div>
             </div>
           </div>
@@ -91,16 +98,18 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 2">
+                  <li class="row align-self-center w-100 pb-3" v-for="item3 in articleList3" :key="item3.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
+                      <a :href="'/party/tradeUnions/'+item3.id">
+                        {{item3.title}}
+                      </a>
                     </div>
                     <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      {{item3.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination3" @getNewData="getArticleList(3)"/>
               </div>
             </div>
           </div>
@@ -122,16 +131,15 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 2">
+                  <li class="row align-self-center w-100 pb-3" v-for="item8 in articleList8" :key="item8.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
-                    </div>
-                    <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      <a href="#" @click.prevent="goLink(item8.id)">
+                        {{item8.title}}
+                      </a>
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination8" @getNewData="getArticleList(8)"/>
               </div>
             </div>
           </div>
@@ -142,10 +150,17 @@
 </template>
 
 <script>
+  import {articleFindApi, articleGetApi, slideShowGetApi} from "@/api/allApi";
+
   export default {
     name: "party",
     data() {
-      return {};
+      return {
+        carouselItem: [],
+        articleList2: [],
+        articleList3: [],
+        articleList8: [],
+      };
     },
     watch: {
       '$route.params.content'(v) {
@@ -165,8 +180,58 @@
         this.$router.push({path: '/party/' + str});
         //$('#party #v-pills-' + str + '-tab').tab('show')
       }
+      this.getCarouselItem();
+      this.getArticleList(2)
+        .then(() => {
+          this.getArticleList(3);
+        })
+        .then(() => {
+          this.getArticleList(8);
+        })
     },
-    methods: {},
+    methods: {
+      goLink(id){
+        articleFindApi({id}).then(response => {
+          if (response.data.code === 200) {
+            window.open(response.data.data.content)
+          } else if (response.data.code === 404) {
+            this.$router.push({name: 'error404'})
+          }
+        }).catch(error => { })
+      },
+      getArticleList(typeId) {
+        /*获取文章，传入id（pagination要与id对应），输出对应数组*/
+        return new Promise((resolve, reject) => {
+          let pagination= this.$refs["pagination" + typeId];
+          let param = {
+            pagination: pagination.current - 1,
+            size: pagination.size,
+            typeId,
+            title: ""
+          };
+          articleGetApi(param).then(result => {
+            let response = result.data.data;
+            this[`articleList${typeId}`] = response.list;
+            pagination.total = response.count;
+            resolve(response);
+          }).catch((error) => {
+            resolve(error);
+          })
+        })
+      },
+      getCarouselItem() {
+        slideShowGetApi().then(response => {
+          if (response.data.code === 200) {
+            response.data.data.forEach(item => {
+              if (item.slideShowType === 1) {
+                this.carouselItem.push(item);
+              }
+            })
+          }
+        }).catch(error => {
+        })
+      },
+    },
   };
 </script>
 

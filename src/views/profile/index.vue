@@ -44,7 +44,7 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane fade h-100" id="v-pills-team" role="tabpanel" aria-labelledby="v-pills-team-tab" style="background-color: rgb(253,253,253)">
+          <div class="tab-pane fade h-100" id="v-pills-team" role="tabpanel" aria-labelledby="v-pills-team-tab" style="background-color: rgb(245,245,245)">
             <div class="contentCard d-flex flex-column h-100">
               <div class="title row w-100 align-self-center mt-1" style="padding:0 15px;height: 50px;">
                 <div class="titleL col d-flex align-items-center pl-0"
@@ -68,8 +68,8 @@
                     <p style="color: #204BB0;margin-bottom: 2px;font-size: 14px;">联系电话：{{item.phone}}</p>
                   </li>
                   <li class="col-6" v-for="item2 in teamMember" v-if="item2.sequence<100" :key="item2.id" style="max-width:45%;margin-left: 3%;padding: 20px 20px;background-color: rgb(255,255,255);border-radius: 10px;margin-top: 10px;margin-bottom: 30px;">
-                    <h3 class="name" style="color: #204BB0;font-weight: bold;font-size: 24px;letter-spacing:2px;">{{item2.name}}</h3>
-                    <p style="color: #333333;margin-bottom: 2px;font-size: 15px;">{{item2.content}}</p>
+                    <h3 class="name" style="color: #204BB0;font-weight: bold;font-size: 24px;letter-spacing:1px;">{{item2.name}}</h3>
+                    <p style="color: #333333;margin-bottom: 5px;font-size: 15px;">{{item2.content}}</p>
                     <p style="color: #204BB0;margin-bottom: 2px;font-size: 14px;">联系电话：{{item2.phone}}</p>
                   </li>
                 </ul>

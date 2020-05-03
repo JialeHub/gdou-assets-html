@@ -5,20 +5,24 @@
         <div class="col col-lg-8 col-12 pl-lg-0">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" v-if="carouselItem.length>0" :data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" v-if="index!==0&&carouselItem.length>1" v-for="index in carouselItem" :key="index"
+              <li data-target="#carouselExampleIndicators" v-if="carouselItem.length>0" :data-slide-to="0"
+                  class="active"></li>
+              <li data-target="#carouselExampleIndicators" v-if="index!==0" v-for="(item,index) in carouselItem"
+                  :key="item.id"
                   :data-slide-to="index"></li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <a :href="carouselItem[0].link" target="_blank" v-if="carouselItem.length>0">
+                <a v-if="carouselItem[0].link!=='http://'&&carouselItem.length>0" :href="carouselItem[0].link" target="_blank">
                   <img :src="carouselItem[0].coverUrl" class="d-block w-100 img-fluid" alt="">
                 </a>
+                <img v-else-if="carouselItem[0].link==='http://'&&carouselItem.length>0" :src="carouselItem[0].coverUrl" class="d-block w-100 img-fluid" alt="">
               </div>
-              <div class="carousel-item" v-if="index!==0" v-for="(item2,index2) in carouselItem" :key="item2.id">
-                <a :href="item2.link" target="_blank" v-if="carouselItem.length>1">
+              <div class="carousel-item" v-if="index2>0" v-for="(item2,index2) in carouselItem" :key="item2.id">
+                <a v-if="item2.link!=='http://'&&carouselItem.length>1" :href="item2.link" target="_blank">
                   <img :src="item2.coverUrl" class="d-block w-100 img-fluid" alt="">
                 </a>
+                <img v-else-if="item2.link==='http://'&&carouselItem.length>1" :src="item2.coverUrl" class="d-block w-100 img-fluid" alt="">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -46,14 +50,17 @@
                 </div>
               </div>
               <div class="msgLinkBox pt-3" style="flex: 1">
-                <ul class="d-flex flex-column h-100">
-                  <li class="row align-self-center justify-content-center w-100" v-for="item in 8" style="flex: 1;">
-                    <div class="col-9"
-                         style="color: #333;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      学校召开学习贯彻党的十九届四中全会中全会中全会中全会精
+                <ul class="d-flex flex-column h-100" :style="'max-height: calc(100% * ('+articleList0.length+'/8))'">
+                  <li class="row align-self-center justify-content-center w-100" v-for="item0 in articleList0"
+                      :key="item0.id"
+                      style="flex: 1;">
+                    <div class="col-9" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                      <a :href="'/dynamic/news/'+item0.id">
+                        {{item0.title}}
+                      </a>
                     </div>
-                    <div class="col-3 text-center">
-                      11.11
+                    <div class="col-3 text-center" style="color: #a1a1a1;font-size: 13px;">
+                      {{item0.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
@@ -86,10 +93,12 @@
                         <div class="w-100" style="background-color: #8dcce8;height: 55%;">
                           <img :src="item3.cover" alt="" width="100%" height="100%">
                         </div>
-                        <div class="mt-2 text w-100" style="font-weight: bold;font-size: 15px;text-align: justify;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;">
+                        <div class="mt-2 text w-100"
+                             style="font-weight: bold;font-size: 15px;text-align: justify;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;">
                           {{item3.name}}
                         </div>
-                        <div class="mt-2 text w-100" style="text-align: justify;font-size:14px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;overflow: hidden;">
+                        <div class="mt-1 text w-100"
+                             style="text-align: justify;font-size:14px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;overflow: hidden;">
                           <span></span>
                           {{item3.content}}
                         </div>
@@ -116,14 +125,16 @@
                 </div>
               </div>
               <div class="msgLinkBox pt-3" style="flex: 1">
-                <ul class="d-flex flex-column h-100">
-                  <li class="row align-self-center justify-content-center w-100" v-for="item in 8" style="flex: 1;">
-                    <div class="col-9"
-                         style="color: #333;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      学校召开学习贯彻党的十九届四中全会中全会中全会中全会精
+                <ul class="d-flex flex-column h-100" :style="'max-height: calc(100% * ('+articleList1.length+'/8))'">
+                  <li class="row align-self-center justify-content-center w-100" v-for="item1 in articleList1"
+                      :key="item1.id" style="flex: 1;">
+                    <div class="col-9" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                      <a :href="'/dynamic/notice/'+item1.id">
+                        {{item1.title}}
+                      </a>
                     </div>
-                    <div class="col-3 text-center">
-                      11.11
+                    <div class="col-3 text-center" style="color: #a1a1a1;font-size: 13px;">
+                      {{item1.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
@@ -137,21 +148,42 @@
 </template>
 
 <script>
-  import {pageCooperationApi, slideShowGetApi} from "@/api/allApi";
+  import {articleGetApi, pageCooperationApi, slideShowGetApi} from "@/api/allApi";
 
   export default {
     name: "Home",
     data() {
       return {
         carouselItem: [],
-        list3: []
+        list3: [],
+        articleList0: [],
+        articleList1: []
       };
     },
     mounted() {
       this.getCarouselItem();
       this.getPageCooperation3();
+      this.getArticleList(0, 8, "articleList0")
+        .then(()=> { this.getArticleList(1, 8, "articleList1"); })
     },
     methods: {
+      getArticleList(typeId, size, arr) {
+        return new Promise((resolve, reject) => {
+          let param = {
+            pagination: 0,
+            size,
+            typeId,
+            title: ""
+          };
+          articleGetApi(param).then(result => {
+            let response = result.data.data;
+            this[`${arr}`] = response.list;
+            resolve(response);
+          }).catch((error) => {
+            resolve(error);
+          })
+        })
+      },
       getCarouselItem() {
         slideShowGetApi().then(response => {
           if (response.data.code === 200) {
@@ -161,7 +193,8 @@
               }
             })
           }
-        }).catch(error => { })
+        }).catch(error => {
+        })
       },
       getPageCooperation3() {
         let param = {
@@ -171,7 +204,6 @@
         };
         pageCooperationApi(param).then(response => {
           if (response.data.code === 200) {
-            console.log(this.list3);
             this.list3 = response.data.data.list;
           }
         }).catch(error => {
@@ -193,6 +225,17 @@
     .titleR {
       a {
         color: #a1a1a1;
+        font-size: 15px;
+      }
+
+      a:hover {
+        color: #214dc8;
+      }
+    }
+
+    .msgLinkBox {
+      a {
+        color: #333;
         font-size: 15px;
       }
 

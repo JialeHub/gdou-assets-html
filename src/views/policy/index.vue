@@ -38,16 +38,18 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 6">
+                  <li class="row align-self-center w-100 pb-3" v-for="item5 in articleList5" :key="item5.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
+                      <a :href="'/policy/public/'+item5.id">
+                        {{item5.title}}
+                      </a>
                     </div>
                     <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      {{item5.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination5" @getNewData="getArticleList(5)"/>
               </div>
             </div>
           </div>
@@ -69,16 +71,18 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 6">
+                  <li class="row align-self-center w-100 pb-3" v-for="item6 in articleList6" :key="item6.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
+                      <a :href="'/policy/school/'+item6.id">
+                        {{item6.title}}
+                      </a>
                     </div>
                     <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      {{item6.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination6" @getNewData="getArticleList(6)"/>
               </div>
             </div>
           </div>
@@ -100,16 +104,18 @@
               </div>
               <div class="contentBox d-flex flex-column" style="flex: 1;padding:16px 15px">
                 <ul class="d-flex flex-column flex-grow-1">
-                  <li class="row align-self-center w-100 pb-3" v-for="item in 6">
+                  <li class="row align-self-center w-100 pb-3" v-for="item7 in articleList7" :key="item7.id">
                     <div class="col pl-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                      <a href="#">学校召开学习贯彻党的十九届四中全会中全会中全会中全会精</a>
+                      <a :href="'/policy/company/'+item7.id">
+                        {{item7.title}}
+                      </a>
                     </div>
                     <div class="col-auto text-center " style="color: #a1a1a1">
-                      11.11
+                      {{item7.createDate | formatDate2}}
                     </div>
                   </li>
                 </ul>
-                <pagination ref="pagination" @getNewData=""/>
+                <pagination ref="pagination7" @getNewData="getArticleList(7)"/>
               </div>
             </div>
           </div>
@@ -120,10 +126,15 @@
 </template>
 
 <script>
+  import {articleGetApi} from "@/api/allApi";
+
   export default {
-    name: "policy",
     data() {
-      return {};
+      return {
+        articleList5: [],
+        articleList6: [],
+        articleList7: [],
+      };
     },
     watch: {
       '$route.params.content'(v) {
@@ -143,8 +154,36 @@
         this.$router.push({path: '/policy/' + str});
         //$('#policy #v-pills-' + str + '-tab').tab('show')
       }
+      this.getArticleList(5)
+        .then(() => {
+          this.getArticleList(6);
+        })
+        .then(() => {
+          this.getArticleList(7);
+        })
     },
-    methods: {},
+    methods: {
+      getArticleList(typeId) {
+        /*获取文章，传入id（pagination要与id对应），输出对应数组*/
+        return new Promise((resolve, reject) => {
+          let pagination= this.$refs["pagination" + typeId];
+          let param = {
+            pagination: pagination.current - 1,
+            size: pagination.size,
+            typeId,
+            title: ""
+          };
+          articleGetApi(param).then(result => {
+            let response = result.data.data;
+            this[`articleList${typeId}`] = response.list;
+            pagination.total = response.count;
+            resolve(response);
+          }).catch((error) => {
+            resolve(error);
+          })
+        })
+      },
+    },
   };
 </script>
 

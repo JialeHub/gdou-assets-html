@@ -17,5 +17,10 @@
   box-shadow:none;
 }
 .htmlBox{
+  overflow-x: hidden;
+  max-width: 100%;
+  img{
+    max-width: 100%;
+  }
 
 }
