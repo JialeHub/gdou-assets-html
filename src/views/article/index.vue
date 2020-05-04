@@ -159,14 +159,17 @@ export default {
       });
     },
     articleFind() {
-      articleFindApi({ id: this.$route.params.id })
-        .then(response => {
-          if (response.data.code === 200) {
-            this.msg = response.data.data;
-          } else if (response.data.code === 404) {
-            this.$router.push({ name: "error404" });
+      articleFindApi({ id: this.$route.params.id }).then(response => {
+        if (response.data.code === 200) {
+          if (response.data.data.link !== "http://") {
+            window.open(response.data.data.link);
+            this.$router.go(-1);
           }
-        })
+          this.msg = response.data.data;
+        } else if (response.data.code === 404) {
+          this.$router.push({ name: "error404" });
+        }
+      });
     }
   }
 };

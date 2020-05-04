@@ -373,7 +373,7 @@ export default {
     goLink(id) {
       articleFindApi({ id }).then(response => {
         if (response.data.code === 200) {
-          window.open(response.data.data.content);
+          window.open(response.data.data.link);
         } else if (response.data.code === 404) {
           this.$router.push({ name: "error404" });
         }

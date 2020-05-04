@@ -303,7 +303,7 @@
                       "
                       ><span>公司工会</span></a
                     >
-                    <a
+                    <!--<a
                       href="/party/about"
                       :class="
                         'nav-item nav-link' +
@@ -316,7 +316,7 @@
                         $router.push({ path: '/party/about' })
                       "
                       ><span>相关链接</span></a
-                    >
+                    >-->
                   </nav>
                 </div>
               </div>
