@@ -371,9 +371,11 @@ export default {
   },
   methods: {
     goLink(id) {
+      let newWindow = window.open();
       articleFindApi({ id }).then(response => {
         if (response.data.code === 200) {
-          window.open(response.data.data.link);
+          newWindow.location.href = response.data.data.link;
+          //window.open(response.data.data.link);
         } else if (response.data.code === 404) {
           this.$router.push({ name: "error404" });
         }
