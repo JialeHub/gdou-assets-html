@@ -1,7 +1,6 @@
 import axios from "axios";
 import qs from "qs";
 import store from "@/store";
-import router from "@/router";
 
 let errorMsg = "";
 
@@ -49,14 +48,14 @@ service.interceptors.response.use(
       }
       return Promise.reject(error);
     }
-    const { message } = error.response.data;
     if (code === 504) {
       if (error.response.statusText === "Gateway Timeout") {
         let msg = "网络错误！";
         if (msg === errorMsg) return;
         errorMsg = msg;
       }
-    } else if (code === 401) { }
+    } else if (code === 401) {
+    }
     return Promise.reject(error);
   }
 );

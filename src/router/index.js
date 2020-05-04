@@ -15,8 +15,8 @@ const routes = [
     name: "home",
     component: () => import("@/views/home"),
     meta: {
-      title: "广东海洋大学湛江资产经营有限公司",// 标题设置
-      activeTag:'home'
+      title: "广东海洋大学湛江资产经营有限公司", // 标题设置
+      activeTag: "home"
     }
   },
   /**********************公司概况**********************/
@@ -26,7 +26,7 @@ const routes = [
     component: () => import("@/views/profile"),
     meta: {
       title: "公司概况", // 标题设置
-      activeTag: 'profile'
+      activeTag: "profile"
     }
   },
   /**********************公司概况**********************/
@@ -37,7 +37,7 @@ const routes = [
     component: () => import("@/views/dynamic"),
     meta: {
       title: "公司动态", // 标题设置
-      activeTag: 'dynamic'
+      activeTag: "dynamic"
     }
   },
   {
@@ -46,7 +46,7 @@ const routes = [
     component: () => import("@/views/dynamic"),
     meta: {
       title: "公司动态", // 标题设置
-      activeTag: 'dynamic'
+      activeTag: "dynamic"
     }
   },
   {
@@ -56,7 +56,7 @@ const routes = [
     meta: {
       titlePre: "公司动态", // 标题设置
       title: "公司动态", // 标题设置
-      activeTag: 'dynamic'
+      activeTag: "dynamic"
     }
   },
   /**********************公司动态**********************/
@@ -67,26 +67,18 @@ const routes = [
     component: () => import("@/views/subordinate/index"),
     meta: {
       title: "下属企业", // 标题设置
-      activeTag: 'subordinate'
+      activeTag: "subordinate"
     }
   },
+
   {
-    path: "/subordinate/:content/",
-    name: "subordinateInside",
-    component: () => import("@/views/subordinate/index"),
-    meta: {
-      title: "下属企业", // 标题设置
-      activeTag: 'subordinate'
-    }
-  },
-  {
-    path: "/subordinate/:content/:id",
+    path: "/subordinate/:id",
     name: "subordinateInside",
     component: () => import("@/views/article"),
     meta: {
       titlePre: "下属企业", // 标题设置
       title: "下属企业", // 标题设置
-      activeTag: 'subordinate'
+      activeTag: "subordinate"
     }
   },
   /**********************下属企业**********************/
@@ -97,7 +89,7 @@ const routes = [
     component: () => import("@/views/subordinate/index"),
     meta: {
       title: "下属企业", // 标题设置
-      activeTag: 'subordinate'
+      activeTag: "subordinate"
     }
   },
   {
@@ -106,7 +98,7 @@ const routes = [
     component: () => import("@/views/subordinate/index"),
     meta: {
       title: "下属企业", // 标题设置
-      activeTag: 'subordinate'
+      activeTag: "subordinate"
     }
   },
   {
@@ -116,7 +108,7 @@ const routes = [
     meta: {
       titlePre: "下属企业", // 标题设置
       title: "下属企业", // 标题设置
-      activeTag: 'subordinate'
+      activeTag: "subordinate"
     }
   },
   /**********************下属企业**********************/
@@ -127,7 +119,7 @@ const routes = [
     component: () => import("@/views/cooperation"),
     meta: {
       title: "合作平台", // 标题设置
-      activeTag: 'cooperation'
+      activeTag: "cooperation"
     }
   },
   /**********************合作平台**********************/
@@ -138,7 +130,7 @@ const routes = [
     component: () => import("@/views/party"),
     meta: {
       title: "党群之窗", // 标题设置
-      activeTag: 'party'
+      activeTag: "party"
     }
   },
   {
@@ -147,7 +139,7 @@ const routes = [
     component: () => import("@/views/party"),
     meta: {
       title: "党群之窗", // 标题设置
-      activeTag: 'party'
+      activeTag: "party"
     }
   },
   {
@@ -157,7 +149,7 @@ const routes = [
     meta: {
       titlePre: "党群之窗", // 标题设置
       title: "党群之窗", // 标题设置
-      activeTag: 'party'
+      activeTag: "party"
     }
   },
   /**********************党群之窗**********************/
@@ -168,7 +160,7 @@ const routes = [
     component: () => import("@/views/policy"),
     meta: {
       title: "政策法律", // 标题设置
-      activeTag: 'policy'
+      activeTag: "policy"
     }
   },
   {
@@ -177,7 +169,7 @@ const routes = [
     component: () => import("@/views/policy"),
     meta: {
       title: "政策法律", // 标题设置
-      activeTag: 'policy'
+      activeTag: "policy"
     }
   },
   {
@@ -187,7 +179,7 @@ const routes = [
     meta: {
       titlePre: "政策法律", // 标题设置
       title: "政策法律", // 标题设置
-      activeTag: 'policy'
+      activeTag: "policy"
     }
   },
   /**********************政策法律**********************/
@@ -198,7 +190,7 @@ const routes = [
     component: () => import("@/views/directory"),
     meta: {
       title: "服务指南", // 标题设置
-      activeTag: 'directory'
+      activeTag: "directory"
     }
   },
   {
@@ -208,7 +200,7 @@ const routes = [
     meta: {
       titlePre: "服务指南", // 标题设置
       title: "服务指南", // 标题设置
-      activeTag: 'directory'
+      activeTag: "directory"
     }
   },
   /**********************服务指南**********************/

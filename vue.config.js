@@ -55,8 +55,8 @@ module.exports = {
         $: "jquery",
         jQuery: "jquery",
         "windows.jQuery": "jquery"
-      })
-      /*new BundleAnalyzerPlugin({ analyzerPort: 9000 })*/
+      }),
+      new BundleAnalyzerPlugin({ analyzerPort: 9000 })
     ]
     /*optimization: {
       noEmitOnErrors: true,
