@@ -6,3 +6,4 @@ Vue.use(Pagination);
 import CustomizedPagination from "@/components/Pagination";
 
 Vue.component("Pagination", CustomizedPagination);
+
