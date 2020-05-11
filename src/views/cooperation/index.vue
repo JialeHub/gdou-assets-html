@@ -174,7 +174,7 @@
                     </h3>
                   </li>
                   <li
-                    class="col-6 justify-content-center  align-self-top pb-2 pt-2 d-flex mb-4"
+                    class="col-6 justify-content-center align-self-top pb-2 pt-2 d-flex mb-4"
                     v-for="item2 in list2"
                     :key="item2.id"
                   >

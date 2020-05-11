@@ -23,7 +23,7 @@
                 </h1>
                 <h2 class="title2">
                   <span
-                    >Guangdong Ocean University Zhanjiang Capital Management Co.
+                    >Guangdong Ocean University Zhanjiang Assets Management Co.
                     LTD</span
                   >
                 </h2>
