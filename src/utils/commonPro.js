@@ -35,5 +35,17 @@ export const getSimpleHtml = (html = "") => {
   return msg;
 };
 
+
+/**
+ * @description 判断浏览器是否为IE
+ * */
+export const isIE = () => { //ie?
+  if (!!window.ActiveXObject || "ActiveXObject" in window)
+    return true;
+  else
+    return false;
+}
+
 Vue.prototype.$addBaseURL = addBaseURL;
 Vue.prototype.$getSimpleHtml = getSimpleHtml;
+Vue.prototype.$isIE = isIE;

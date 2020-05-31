@@ -90,7 +90,7 @@
                   <a href="/profile#intro" class="bread breadNav">- 公司简介</a>
                 </div>
               </div>
-              <div class="contentBox" style="flex: 1;padding:16px 15px">
+              <div class="contentBox" style="flex: 1 0 auto;margin:16px 15px">
                 <div class="htmlBox" v-html="introduce"></div>
               </div>
             </div>
@@ -126,7 +126,7 @@
                   <a href="/profile#team" class="bread breadNav">- 公司团队</a>
                 </div>
               </div>
-              <div class="contentBox" style="flex: 1;padding:16px 15px">
+              <div class="contentBox" style="flex: 1 1 auto;margin:16px 15px">
                 <ul class="row">
                   <li
                     class="col-12"
@@ -224,7 +224,7 @@
               </div>
               <div
                 class="contentBox"
-                style="flex: 1;padding:16px 15px;max-width: 100%;margin-top: 10px;"
+                style="flex: 1 1 auto;margin:16px 15px;max-width: 100%;margin-top: 10px;"
               >
                 <img :src="frameworkImg" alt="" style="max-width: 100%" />
               </div>
@@ -262,7 +262,7 @@
                   >
                 </div>
               </div>
-              <div class="contentBox" style="flex: 1;padding:16px 15px">
+              <div class="contentBox" style="flex: 1 1 auto;margin:16px 15px">
                 <h3
                   style="text-align: center;font-weight: bold;color: #333333;margin-top: 30px;"
                 >

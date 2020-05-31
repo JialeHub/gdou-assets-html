@@ -7,30 +7,30 @@
       <div class="row justify-content-center">
         <div class="col">
           <p class="text-center mb-0 text">
-            <span class="row text1 justify-content-center">
-              <span class="col flex-grow-0 text-nowrap">
+            <span class="row text1 d-block" style="text-align: center">
+              <span class="col text-nowrap" style="flex: 0 0">
                 联系地址：广东省湛江市麻章区海大路1号广东海洋大学</span
               >
-              <span class="col flex-grow-0 text-nowrap"> 邮编：524088</span>
-              <span class="col flex-grow-0 text-nowrap">
+              <span class="col text-nowrap" style="flex: 0 0"> 邮编：524088</span>
+              <span class="col text-nowrap" style="flex: 0 0">
                 电话：0759-0000000</span
               >
-              <span class="col flex-grow-0 text-nowrap">
+              <span class="col text-nowrap" style="flex: 0 0">
                 邮箱：gdouxxxxxxx@edu.com</span
               >
             </span>
 
-            <span class="row text2 justify-content-center">
-              <span class="col flex-grow-0 text-nowrap">
+            <span class="row text2 d-block" style="text-align: center">
+              <span class="col flex-grow-0" style="flex: 0 0">
                 Copyright © 2018 - 2020 WTeam.</span
               >
-              <span class="col flex-grow-0 text-nowrap">
+              <span class="col flex-grow-0" style="flex: 0 0">
                 All Rights Reserved.</span
               >
-              <span class="col flex-grow-0 text-nowrap">
+              <span class="col flex-grow-0" style="flex: 0 0">
                 (粤)-经营性-2017-2020</span
               >
-              <span class="col flex-grow-0 text-nowrap">
+              <span class="col flex-grow-0" style="flex: 0 0">
                 粤公网安备00000000000001号</span
               >
             </span>

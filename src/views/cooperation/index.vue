@@ -83,7 +83,7 @@
               </div>
               <div
                 class="contentBox d-flex flex-column"
-                style="flex: 1;padding:16px 15px"
+                style="flex: 1 1 auto;padding:16px 15px"
               >
                 <ul class="d-flex flex-column flex-grow-1">
                   <li class="pt-2 pb-3">
@@ -101,7 +101,7 @@
                     <div class="img" style="flex: 0 0 120px">
                       <img
                         :src="item1.cover"
-                        style="border-radius: 50%"
+                        style="border-radius: 50%;width: 120px;height: 120px;"
                         class="img-fluid"
                         alt=""
                       />
@@ -163,7 +163,7 @@
               </div>
               <div
                 class="contentBox d-flex flex-column"
-                style="flex: 1;padding:16px 15px"
+                style="flex: 1 1 auto;padding:16px 15px"
               >
                 <ul class="row d-flex flex-grow-1 ">
                   <li class="col-12 pt-3 pb-4">
@@ -182,7 +182,7 @@
                       <img class="card-img-top" :src="item2.cover" alt="" />
                       <div class="card-body">
                         <h4>{{ item2.name }}</h4>
-                        <p class="card-text" style="text-align: justify">
+                        <p :title="item2.content" class="card-text" style="text-align: justify;font-size:16px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;overflow: hidden;" >
                           {{ item2.content }}
                         </p>
                       </div>
@@ -240,7 +240,7 @@
               </div>
               <div
                 class="contentBox d-flex flex-column"
-                style="flex: 1;padding:16px 15px"
+                style="flex: 1 0 auto;padding:16px 15px"
               >
                 <ul class="row d-flex flex-grow-1 ">
                   <li class="col-12 pt-3 pb-4">

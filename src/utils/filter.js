@@ -5,7 +5,7 @@ import Vue from "vue";
  * @return YYYY.MM.DD
  **/
 Vue.filter("formatDate2", value => {
-  let date = new Date(value);
+  let date = new Date(value.replace(/-/g,'/'));
   let year = date.getFullYear();
   let month = (date.getMonth() + 1).toString().padStart(2, "0");
   let day = date
@@ -20,7 +20,7 @@ Vue.filter("formatDate2", value => {
  * @return YYYY-MM-DD
  **/
 Vue.filter("formatDate", value => {
-  let date = new Date(value);
+  let date = new Date(value.replace(/-/g,'/'));
   let year = date.getFullYear();
   let month = (date.getMonth() + 1).toString().padStart(2, "0");
   let day = date
@@ -35,7 +35,7 @@ Vue.filter("formatDate", value => {
  * @return YYYY-MM-DD hh:mm:ss
  **/
 Vue.filter("formatDateMM", value => {
-  let date = new Date(value);
+  let date = new Date(value.replace(/-/g,'/'));
   let year = date.getFullYear();
   let month = (date.getMonth() + 1).toString().padStart(2, "0");
   let day = date
@@ -62,7 +62,7 @@ Vue.filter("formatDateMM", value => {
  * @return YYYY-MM-DD hh:mm:ss
  **/
 Vue.filter("formatDateSS", value => {
-  let date = new Date(value);
+  let date = new Date(value.replace(/-/g,'/'));
   let year = date.getFullYear();
   let month = (date.getMonth() + 1).toString().padStart(2, "0");
   let day = date

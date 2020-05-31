@@ -3,12 +3,13 @@ let path = require("path");
 const resolve = dir => require("path").join(__dirname, dir);
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+const CompressionPlugin = require("compression-webpack-plugin");
 //const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   publicPath: "/", // 基本路径
   outputDir: "dist", // 输出文件目录
-  assetsDir: "", // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录 , Default: ''
+  assetsDir: "static", // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录 , Default: ''
   indexPath: "index.html", //Default: 'index.html' // 指定生成的 index.html 的输出路径 (相对于 outputDir)。也可以是一个绝对路径。
   filenameHashing: true, //Default: true
   lintOnSave: true, //Default: true resolve// eslint-loader 是否在保存的时候检查,有效的值：true | false | "error"设置为 "error" 时，检查出的错误会触发编译失败。
@@ -55,7 +56,25 @@ module.exports = {
         $: "jquery",
         jQuery: "jquery",
         "windows.jQuery": "jquery"
-      })
+      }),
+        /*new CompressionPlugin({
+        /!* [file]被替换为原始资产文件名。
+           [path]替换为原始资产的路径。
+           [dir]替换为原始资产的目录。
+           [name]被替换为原始资产的文件名。
+           [ext]替换为原始资产的扩展名。
+           [query]被查询替换。*!/
+        filename: '[path].gz[query]',
+        //压缩算法
+        algorithm: 'gzip',
+        //匹配文件
+        test: /\.js$|\.css$|\.html$/,
+        //压缩超过此大小的文件,以字节为单位
+        threshold: 10240,
+        minRatio: 0.8,
+        //删除原始文件只保留压缩后的文件
+        deleteOriginalAssets: true
+      })*/
       /*new BundleAnalyzerPlugin({ analyzerPort: 9000 })*/
     ]
     /*optimization: {

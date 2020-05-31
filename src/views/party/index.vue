@@ -2,7 +2,7 @@
   <div id="party">
     <div class="container-fluid h-100">
       <div class="row justify-content-center h-100 flex-column">
-        <div class="col-12" style="flex: 0;">
+        <div class="col-12" style="flex: 0 0 auto;">
           <div
             id="carouselExampleIndicators"
             class="carousel slide"
@@ -105,7 +105,7 @@
         </div>
         <div
           class="col-12 nav nav-pills nav-fill"
-          style="flex: 0;padding-left: 15px;"
+          style="flex: 0 0 auto;padding-left: 15px;"
           id="v-pills-tab"
           role="tablist"
           aria-orientation="vertical"
@@ -146,7 +146,7 @@
         </div>
         <div
           class="col-12 tab-content"
-          style="flex: 1;min-height: 200px"
+          style="flex: 1 1 auto;min-height: 200px"
           id="v-pills-tabContent"
         >
           <div
@@ -181,7 +181,7 @@
               </div>
               <div
                 class="contentBox d-flex flex-column"
-                style="flex: 1;padding:16px 15px"
+                style="flex: 1 1 auto;padding:16px 15px"
               >
                 <ul class="d-flex flex-column flex-grow-1">
                   <li
@@ -240,7 +240,7 @@
               </div>
               <div
                 class="contentBox d-flex flex-column"
-                style="flex: 1;padding:16px 15px"
+                style="flex: 1 1 auto;padding:16px 15px"
               >
                 <ul class="d-flex flex-column flex-grow-1">
                   <li
@@ -297,7 +297,7 @@
               </div>
               <div
                 class="contentBox d-flex flex-column"
-                style="flex: 1;padding:16px 15px"
+                style="flex: 1 1 auto;padding:16px 15px"
               >
                 <ul class="d-flex flex-column flex-grow-1">
                   <li

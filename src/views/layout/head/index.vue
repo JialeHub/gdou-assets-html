@@ -1,7 +1,7 @@
 <template>
   <div id="Head">
     <!--------------------------头部Start-------------------------->
-    <div class="container-fluid h-100">
+    <div class="container-fluid">
       <!--banner-->
       <div class="row bannerOut h-100">
         <div class="container-xl">
@@ -15,7 +15,9 @@
               "
             >
               <div class="logoImg">
-                <img src="@/assets/logo_224x224.png" alt="" />
+                <a href="https://www.gdou.edu.cn/">
+                  <img src="@/assets/logo_224x224.png" alt="" />
+                </a>
               </div>
               <div class="title">
                 <h1 class="title1">

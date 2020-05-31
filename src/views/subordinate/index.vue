@@ -29,7 +29,7 @@
               </div>
               <div
                 class="contentBox d-flex flex-column"
-                style="flex: 1;padding:16px 15px"
+                style="flex: 1 1 auto;padding:16px 15px"
               >
                 <div class="card-group flex-wrap">
                   <div

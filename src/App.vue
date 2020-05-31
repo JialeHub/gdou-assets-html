@@ -34,7 +34,7 @@ export default {
   flex-direction: column;
 
   .main {
-    flex: 1;
+    flex: 1 1 auto;
 
     .router {
       width: 100%;
