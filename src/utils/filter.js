@@ -5,14 +5,19 @@ import Vue from "vue";
  * @return YYYY.MM.DD
  **/
 Vue.filter("formatDate2", value => {
-  let date = new Date(value.replace(/-/g,'/'));
-  let year = date.getFullYear();
-  let month = (date.getMonth() + 1).toString().padStart(2, "0");
-  let day = date
-    .getDate()
-    .toString()
-    .padStart(2, "0");
-  return `${year}.${month}.${day}`;
+  if (value){
+    let date = new Date(value.replace(/-/g,'/'));
+    let year = date.getFullYear();
+    let month = (date.getMonth() + 1).toString().padStart(2, "0");
+    let day = date
+      .getDate()
+      .toString()
+      .padStart(2, "0");
+    return `${year}.${month}.${day}`;
+  }else{
+    return value
+  }
+
 });
 
 /**
@@ -20,14 +25,19 @@ Vue.filter("formatDate2", value => {
  * @return YYYY-MM-DD
  **/
 Vue.filter("formatDate", value => {
-  let date = new Date(value.replace(/-/g,'/'));
-  let year = date.getFullYear();
-  let month = (date.getMonth() + 1).toString().padStart(2, "0");
-  let day = date
-    .getDate()
-    .toString()
-    .padStart(2, "0");
-  return `${year}-${month}-${day}`;
+  if (value){
+    let v=value.replace(/-/g,'/')
+    let date = new Date(v);
+    let year = date.getFullYear();
+    let month = (date.getMonth() + 1).toString().padStart(2, "0");
+    let day = date
+      .getDate()
+      .toString()
+      .padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }else{
+    return value
+  }
 });
 
 /**
@@ -35,26 +45,30 @@ Vue.filter("formatDate", value => {
  * @return YYYY-MM-DD hh:mm:ss
  **/
 Vue.filter("formatDateMM", value => {
-  let date = new Date(value.replace(/-/g,'/'));
-  let year = date.getFullYear();
-  let month = (date.getMonth() + 1).toString().padStart(2, "0");
-  let day = date
-    .getDate()
-    .toString()
-    .padStart(2, "0");
-  let hours = date
-    .getHours()
-    .toString()
-    .padStart(2, "0");
-  let minutes = date
-    .getMinutes()
-    .toString()
-    .padStart(2, "0");
-  let seconds = date
-    .getSeconds()
-    .toString()
-    .padStart(2, "0");
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  if (value){
+    let date = new Date(value.replace(/-/g,'/'));
+    let year = date.getFullYear();
+    let month = (date.getMonth() + 1).toString().padStart(2, "0");
+    let day = date
+      .getDate()
+      .toString()
+      .padStart(2, "0");
+    let hours = date
+      .getHours()
+      .toString()
+      .padStart(2, "0");
+    let minutes = date
+      .getMinutes()
+      .toString()
+      .padStart(2, "0");
+    let seconds = date
+      .getSeconds()
+      .toString()
+      .padStart(2, "0");
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  }else{
+    return value
+  }
 });
 
 /**
@@ -62,24 +76,28 @@ Vue.filter("formatDateMM", value => {
  * @return YYYY-MM-DD hh:mm:ss
  **/
 Vue.filter("formatDateSS", value => {
-  let date = new Date(value.replace(/-/g,'/'));
-  let year = date.getFullYear();
-  let month = (date.getMonth() + 1).toString().padStart(2, "0");
-  let day = date
-    .getDate()
-    .toString()
-    .padStart(2, "0");
-  let hours = date
-    .getHours()
-    .toString()
-    .padStart(2, "0");
-  let minutes = date
-    .getMinutes()
-    .toString()
-    .padStart(2, "0");
-  let seconds = date
-    .getSeconds()
-    .toString()
-    .padStart(2, "0");
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  if (value){
+    let date = new Date(value.replace(/-/g,'/'));
+    let year = date.getFullYear();
+    let month = (date.getMonth() + 1).toString().padStart(2, "0");
+    let day = date
+      .getDate()
+      .toString()
+      .padStart(2, "0");
+    let hours = date
+      .getHours()
+      .toString()
+      .padStart(2, "0");
+    let minutes = date
+      .getMinutes()
+      .toString()
+      .padStart(2, "0");
+    let seconds = date
+      .getSeconds()
+      .toString()
+      .padStart(2, "0");
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  }else{
+    return value
+  }
 });

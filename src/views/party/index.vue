@@ -193,7 +193,7 @@
                       class="col pl-0"
                       style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/party/dynamic/' + item2.id">
+                      <a :href="'/party/dynamic/' + item2.id" @click.prevent="getLink('/party/dynamic/',item2.id)">
                         {{ item2.title }}
                       </a>
                     </div>
@@ -252,7 +252,7 @@
                       class="col pl-0"
                       style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/party/tradeUnions/' + item3.id">
+                      <a :href="'/party/tradeUnions/' + item3.id" @click.prevent="getLink('/party/tradeUnions/',item3.id)">
                         {{ item3.title }}
                       </a>
                     </div>
@@ -370,6 +370,22 @@ export default {
       });
   },
   methods: {
+    getLink(url,id){
+      let newWindow = window.open();
+      articleFindApi({id}).then(response => {
+        if (response.data.code === 200) {
+          if (response.data.data.link !== "http://") {
+            newWindow.location.href = response.data.data.link;
+            //window.open(response.data.data.link);
+          }else{
+            newWindow.close();
+            this.$router.push({path: url + id})
+          }
+        } else if (response.data.code === 404) {
+          newWindow.location.href = "/404";
+        }
+      });
+    },
     goLink(id) {
       let newWindow = window.open();
       articleFindApi({ id }).then(response => {

@@ -182,7 +182,7 @@
                       <img class="card-img-top" :src="item2.cover" alt="" />
                       <div class="card-body">
                         <h4>{{ item2.name }}</h4>
-                        <p :title="item2.content" class="card-text" style="text-align: justify;font-size:16px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;overflow: hidden;" >
+                        <p :title="item2.content" class="card-text" style="text-align: justify;font-size:16px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;" >
                           {{ item2.content }}
                         </p>
                       </div>
@@ -244,9 +244,7 @@
               >
                 <ul class="row d-flex flex-grow-1 ">
                   <li class="col-12 pt-3 pb-4">
-                    <h3
-                      style="color: #333;font-weight: bold;text-align: center"
-                    >
+                    <h3 style="color: #333;font-weight: bold;text-align: center" >
                       孵化转化平台
                     </h3>
                   </li>
@@ -259,7 +257,7 @@
                       <img class="card-img-top" :src="item3.cover" alt="" />
                       <div class="card-body">
                         <h4>{{ item3.name }}</h4>
-                        <p class="card-text" style="text-align: justify">
+                        <p :title="item3.content" class="card-text" style="text-align: justify;font-size:16px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;" >
                           {{ item3.content }}
                         </p>
                       </div>

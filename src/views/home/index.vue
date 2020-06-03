@@ -141,7 +141,7 @@
                         class="col-9"
                         style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/dynamic/news/' + item0.id">
+                      <a :href="'/dynamic/news/' + item0.id" @click.prevent="getLink('/dynamic/news/',item0.id)">
                         {{ item0.title }}
                       </a>
                     </div>
@@ -160,9 +160,9 @@
       </div>
       <div v-if="!$isIE()" class="row mt-3 mt-lg-5">
         <div class="col col-lg-8 col-12 pl-lg-0">
-          <div
-              class=""
-              style="width: 100%;height: auto;border: 1px solid rgb(215,215,215);"
+          <div v-if="false"
+               class=""
+               style="width: 100%;height: auto;border: 1px solid rgb(215,215,215);"
           >
             <div class="msgLinkCard d-flex flex-column h-100">
               <div
@@ -173,7 +173,8 @@
                     class="titleL col-9 d-flex align-items-center pl-0"
                     style="border-bottom: rgb(215,215,215) solid 2px;font-family: 'Arial Negreta', 'Arial Normal', 'Arial';font-weight: 700;color: #204BB0;"
                 >
-                  <span style="bottom: -2px;position: relative;line-height: 46px; border-bottom: #204BB0 solid 2px;height: 100%;" >孵化转化平台</span   >
+                  <span
+                      style="bottom: -2px;position: relative;line-height: 46px; border-bottom: #204BB0 solid 2px;height: 100%;">孵化转化平台</span>
                 </div>
                 <div
                     class="titleR col-3 d-flex align-items-center justify-content-end pr-3"
@@ -275,7 +276,7 @@
                         class="col-9"
                         style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/dynamic/notice/' + item1.id">
+                      <a :href="'/dynamic/notice/' + item1.id" @click.prevent="getLink('/dynamic/notice/',item1.id)">
                         {{ item1.title }}
                       </a>
                     </div>
@@ -298,6 +299,7 @@
 
 <script>
   import {
+    articleFindApi,
     articleGetApi,
     pageCooperationApi,
     slideShowGetApi
@@ -321,6 +323,22 @@
       });
     },
     methods: {
+      getLink(url, id) {
+        let newWindow = window.open();
+        articleFindApi({id}).then(response => {
+          if (response.data.code === 200) {
+            if (response.data.data.link !== "http://") {
+              newWindow.location.href = response.data.data.link;
+              //window.open(response.data.data.link);
+            } else {
+              newWindow.close();
+              this.$router.push({path: url + id})
+            }
+          } else if (response.data.code === 404) {
+            newWindow.location.href = "/404";
+          }
+        });
+      },
       getArticleList(typeId, size, arr) {
         return new Promise(resolve => {
           let param = {

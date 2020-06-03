@@ -93,11 +93,11 @@
                       class="col pl-0"
                       style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/policy/public/' + item5.id">
+                      <a :href="'/policy/public/' + item5.id" @click.prevent="getLink('/policy/public/',item5.id)">
                         {{ item5.title }}
                       </a>
                     </div>
-                    <div class="col-auto text-center " style="color: #a1a1a1">
+                    <div class="col-auto text-center " style="color: #a1a1a1" >
                       {{ item5.createDate | formatDate2 }}
                     </div>
                   </li>
@@ -150,7 +150,7 @@
                       class="col pl-0"
                       style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/policy/school/' + item6.id">
+                      <a :href="'/policy/school/' + item6.id" @click.prevent="getLink('/policy/school/',item6.id)">
                         {{ item6.title }}
                       </a>
                     </div>
@@ -209,7 +209,7 @@
                       class="col pl-0"
                       style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/policy/company/' + item7.id">
+                      <a :href="'/policy/company/' + item7.id" @click.prevent="getLink('/policy/company/',item7.id)">
                         {{ item7.title }}
                       </a>
                     </div>
@@ -229,7 +229,7 @@
 </template>
 
 <script>
-import { articleGetApi } from "@/api/allApi";
+  import {articleFindApi, articleGetApi} from "@/api/allApi";
 
 export default {
   data() {
@@ -270,6 +270,22 @@ export default {
       });
   },
   methods: {
+    getLink(url,id){
+      let newWindow = window.open();
+      articleFindApi({id}).then(response => {
+        if (response.data.code === 200) {
+          if (response.data.data.link !== "http://") {
+            newWindow.location.href = response.data.data.link;
+            //window.open(response.data.data.link);
+          }else{
+            newWindow.close();
+            this.$router.push({path: url + id})
+          }
+        } else if (response.data.code === 404) {
+          newWindow.location.href = "/404";
+        }
+      });
+    },
     getArticleList(typeId) {
       /*获取文章，传入id（pagination要与id对应），输出对应数组*/
       return new Promise(resolve => {

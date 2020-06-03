@@ -99,6 +99,8 @@
     name: "articleContent",
     data() {
       return {
+        temp: '',
+        jumpUrl: '',
         now: "",
         msg: {},
         pathArr: [],
@@ -112,7 +114,7 @@
     watch: {
       "$route.path"() {
         location.reload();
-      }
+      },
     },
     mounted() {
       this.path = this.$route.fullPath;
@@ -182,8 +184,7 @@
             }
             let msgTemp = response.data.data;
             this.$route.meta.title = msgTemp.title;
-            document.title=msgTemp.title
-            console.log(this.$route);
+            document.title = msgTemp.title
             this.articleTitleGet(response.data.data.last).then(lastTitle => {
               msgTemp.lastTitle = lastTitle;
               this.articleTitleGet(response.data.data.next).then(nextTitle => {

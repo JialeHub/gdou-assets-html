@@ -82,7 +82,7 @@
                       class="col pl-0"
                       style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/dynamic/news/' + item0.id">
+                      <a :href="'/dynamic/news/' + item0.id"  @click.prevent="getLink('/dynamic/news/',item0.id)">
                         {{ item0.title }}
                       </a>
                     </div>
@@ -141,7 +141,7 @@
                       class="col pl-0"
                       style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
-                      <a :href="'/dynamic/news/' + item1.id">
+                      <a :href="'/dynamic/notice/' + item1.id"  @click.prevent="getLink('/dynamic/notice/',item1.id)">
                         {{ item1.title }}
                       </a>
                     </div>
@@ -161,7 +161,7 @@
 </template>
 
 <script>
-import { articleGetApi } from "@/api/allApi";
+  import {articleFindApi, articleGetApi} from "@/api/allApi";
 
 export default {
   name: "dynamic",
@@ -199,6 +199,22 @@ export default {
     });
   },
   methods: {
+    getLink(url,id){
+      let newWindow = window.open();
+      articleFindApi({id}).then(response => {
+        if (response.data.code === 200) {
+          if (response.data.data.link !== "http://") {
+            newWindow.location.href = response.data.data.link;
+            //window.open(response.data.data.link);
+          }else{
+            newWindow.close();
+            this.$router.push({path: url + id})
+          }
+        } else if (response.data.code === 404) {
+          newWindow.location.href = "/404";
+        }
+      });
+    },
     getArticleList(typeId) {
       /*获取文章，传入id（pagination要与id对应），输出对应数组*/
       return new Promise(resolve => {
