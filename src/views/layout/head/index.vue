@@ -214,7 +214,7 @@
               @click.prevent="$router.push({ path: '/cooperation' })"
             >
               <span>合作平台</span>
-              <div class="nav2" v-show="nav2_4">
+              <div class="nav2" v-show="nav2_4 && false">
                 <div class="box">
                   <nav class="nav nav-pills">
                     <a

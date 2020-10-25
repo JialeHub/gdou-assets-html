@@ -1,10 +1,10 @@
 <template>
   <div id="cooperation">
     <div class="container-fluid h-100">
-      <div class="row h-100">
+      <div class="row h-100 flex-nowrap">
         <div
           class="col nav flex-column nav-pills"
-          style="max-width:200px"
+          style="flex: 0 0 200px"
           id="v-pills-tab"
           role="tablist"
           aria-orientation="vertical"
@@ -48,7 +48,7 @@
             >孵化转化平台</a
           >
         </div>
-        <div class="col tab-content" id="v-pills-tabContent">
+         <div class="col tab-content overflow-hidden" id="v-pills-tabContent">
           <div
             class="tab-pane fade h-100 show active h-100"
             id="v-pills-product"
@@ -94,7 +94,7 @@
                     </h3>
                   </li>
                   <li
-                    class="row align-self-center w-100 pb-2 pt-2 d-flex mb-4"
+                    class="row align-self-center w-100 pb-2 pt-2 d-flex mb-4 overflow-hidden flex-nowrap"
                     v-for="item1 in list1"
                     :key="item1.id"
                   >
@@ -106,19 +106,17 @@
                         alt=""
                       />
                     </div>
-                    <div class="msg d-flex flex-column pl-3" style="flex: 1">
+                    <div class="msg d-flex flex-column pl-3 overflow-hidden" style="flex: 1 1 auto">
                       <div
                         class="title "
                         style="color: #204BB0;font-size: 20px;"
                       >
                         {{ item1.name }}
                       </div>
-                      <div
+                      <pre
                         class="text"
                         style="font-size: 16px;color: #333;text-align: justify"
-                      >
-                        {{ item1.content }}<br />
-                      </div>
+                      >{{ item1.content }}</pre><br />
                     </div>
                   </li>
                 </ul>
@@ -182,9 +180,9 @@
                       <img class="card-img-top" :src="item2.cover" alt="" />
                       <div class="card-body">
                         <h4>{{ item2.name }}</h4>
-                        <p :title="item2.content" class="card-text" style="text-align: justify;font-size:16px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;" >
+                        <pre :title="item2.content" class="card-text" style="text-align: justify;font-size:16px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;" >
                           {{ item2.content }}
-                        </p>
+                        </pre>
                       </div>
                     </div>
                   </li>
@@ -257,9 +255,9 @@
                       <img class="card-img-top" :src="item3.cover" alt="" />
                       <div class="card-body">
                         <h4>{{ item3.name }}</h4>
-                        <p :title="item3.content" class="card-text" style="text-align: justify;font-size:16px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;" >
+                        <pre :title="item3.content" class="card-text" style="text-align: justify;font-size:16px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;" >
                           {{ item3.content }}
-                        </p>
+                        </pre>
                       </div>
                     </div>
                   </li>

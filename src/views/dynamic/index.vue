@@ -1,10 +1,10 @@
 <template>
   <div id="dynamic">
     <div class="container-fluid h-100">
-      <div class="row h-100">
+      <div class="row h-100 flex-nowrap">
         <div
           class="col nav flex-column nav-pills"
-          style="max-width:200px"
+          style="flex: 0 0 200px"
           id="v-pills-tab"
           role="tablist"
           aria-orientation="vertical"
@@ -37,7 +37,7 @@
             >通知公告</a
           >
         </div>
-        <div class="col tab-content" id="v-pills-tabContent">
+         <div class="col tab-content overflow-hidden" id="v-pills-tabContent">
           <div
             class="tab-pane fade h-100 show active h-100"
             id="v-pills-news"

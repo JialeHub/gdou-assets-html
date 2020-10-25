@@ -13,10 +13,10 @@
               >
               <span class="col text-nowrap" style="flex: 0 0"> 邮编：524088</span>
               <span class="col text-nowrap" style="flex: 0 0">
-                电话：0759-0000000</span
+                电话：0759-2362223</span
               >
               <span class="col text-nowrap" style="flex: 0 0">
-                邮箱：gdouxxxxxxx@edu.com</span
+                邮箱：zcgs@gdou.edu.cn</span
               >
             </span>
 

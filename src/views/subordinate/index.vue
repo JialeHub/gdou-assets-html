@@ -83,9 +83,8 @@
 </template>
 
 <script>
-import { subsidiaryFindApi, subsidiaryGetApi } from "@/api/allApi";
-
-export default {
+  import { subsidiaryFindApi, subsidiaryGetApi } from "@/api/allApi";
+  export default {
   name: "subordinate",
   data() {
     return {
@@ -136,7 +135,7 @@ export default {
 </script>
 
 <style lang="scss">
-#subordinate {
+  #subordinate {
   .order1 {
     order: 1;
   }

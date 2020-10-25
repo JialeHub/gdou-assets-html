@@ -70,7 +70,7 @@
               地址：{{ this.msg.address }}
             </p>
             <p
-                v-if="msg.website !== undefined && msg.website !== ''"
+                v-if="msg.website !== undefined && msg.website !== 'http://'"
                 style="font-size: 16px"
             >
               网址：<a :href="this.msg.website">{{ this.msg.website }}</a>

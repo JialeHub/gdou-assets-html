@@ -24,3 +24,11 @@
   }
 
 }
+pre{
+  font-family:'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  white-space:pre-wrap; /* css3.0 */
+  white-space:-moz-pre-wrap; /* Firefox */
+  white-space:-pre-wrap; /* Opera 4-6 */
+  white-space:-o-pre-wrap; /* Opera 7 */
+  word-wrap:break-word; /* Internet Explorer 5.5+ */
+}

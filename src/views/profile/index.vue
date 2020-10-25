@@ -1,10 +1,10 @@
 <template>
   <div id="profile">
     <div class="container-fluid h-100">
-      <div class="row h-100">
+      <div class="row h-100 flex-nowrap">
         <div
           class="col nav flex-column nav-pills"
-          style="max-width:200px"
+          style="flex: 0 0 200px"
           id="v-pills-tab"
           role="tablist"
           aria-orientation="vertical"
@@ -59,7 +59,7 @@
             >联系我们</a
           >
         </div>
-        <div class="col tab-content" id="v-pills-tabContent">
+         <div class="col tab-content overflow-hidden" id="v-pills-tabContent">
           <div
             class="tab-pane fade h-100 show active h-100"
             id="v-pills-intro"
@@ -141,11 +141,9 @@
                     >
                       {{ item.name }}
                     </h3>
-                    <p
+                    <pre
                       style="color: #333333;margin-bottom: 2px;font-size: 15px;"
-                    >
-                      {{ item.content }}
-                    </p>
+                    >{{ item.content }}</pre>
                     <p
                       style="color: #204BB0;margin-bottom: 2px;font-size: 14px;"
                     >
@@ -165,14 +163,8 @@
                     >
                       {{ item2.name }}
                     </h3>
-                    <p
-                      style="color: #333333;margin-bottom: 5px;font-size: 15px;"
-                    >
-                      {{ item2.content }}
-                    </p>
-                    <p
-                      style="color: #204BB0;margin-bottom: 2px;font-size: 14px;"
-                    >
+                    <pre style="color: #333333;margin-bottom: 5px;font-size: 15px; " >{{item2.content}}</pre>
+                    <p style="color: #204BB0;margin-bottom: 2px;font-size: 14px;" >
                       联系电话：{{ item2.phone }}
                     </p>
                   </li>
